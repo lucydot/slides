@@ -1,0 +1,11 @@
+language: node_js
+node_js: '6'
+install: npm install
+script: npm run generate
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: docs
+  on:
+    branch: master
+  github_token: $GITHUB_TOKEN
