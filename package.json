@@ -1,0 +1,23 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "Lucydot's slides",
+  "main": "index.js",
+  "scripts": {
+    "presentation": "reveal-md JOSS_0119/JOSS_0119.md",
+    "generate": "reveal-md JOSS_0119/JOSS_0119.md --static docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucydot/slides.git"
+  },
+  "author": "Lucy Whalley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucydot/slides/issues"
+  },
+  "homepage": "https://github.com/lucydot/slides#readme",
+  "devDependencies": {
+    "reveal-md": "^0.4.2"
+  }
+}
