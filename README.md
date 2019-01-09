@@ -1,5 +1,3 @@
-## Slides
-
 A repository for my talk slides, generated using reveal-md. Static sites are built locally on a gh-pages branch.  
 My homepage is [here](lucydot.github.io).
 
