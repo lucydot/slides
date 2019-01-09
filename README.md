@@ -1,5 +1,5 @@
 # slides
-A repository for my academic and outreach talk slides
+A repository for my talk slides, generated using reveal-md. Static site built locally on gh-pages branch.
 
 ### image credits
 
