@@ -1,4 +1,4 @@
-A repository for my talk slides, generated using reveal-md. Static sites are built locally on a gh-pages branch.  
+A repository for my talk slides, generated using [reveal-md](https://github.com/webpro/reveal-md).  
 My homepage is [here](https://lucydot.github.io).
 
 ### [Publishing your Software Project with the Journal of Open Source Software](https://lucydot.github.io/slides/JOSS_0119)
