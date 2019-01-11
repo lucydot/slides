@@ -10,5 +10,6 @@ Short talk delivered at the Imperial College London Research Software in Materia
 #### image credits
 
 - background icon from https://www.freepik.com/" 
-- https://phys.org/news/2011-06-efficiency-flexible-cdte-solar-cell.html  
-- https://peerj.com/articles/cs-147/
+- slide 1: https://jos.theoj.org
+- slide 2: https://phys.org/news/2011-06-efficiency-flexible-cdte-solar-cell.html  
+- slide 6: https://peerj.com/articles/cs-147/
