@@ -7,11 +7,11 @@ You can re-use any of its content as long as the following attribution is includ
 
 ### SSI Fellowship Application 2019
 
-[online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI0219_notes) / [video]()
+[online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI0219_notes.md) / [video]()
 
 Presentation which formed the bulk part of my Fellowship Application to the Sustainable Software Institute, 02/19.
 
-My proposed workshop outline ("Get your code publication ready") [is here](https://lucydot.github.io/slides/SSI_0219/workshop_outline.md) and the (beginnings of a) workshop website [is here](https://lucydot.github.io/publication-ready/index.html).
+My proposed workshop outline ("Get your code publication ready") [is here](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/workshop_outline.md) and the (beginnings of a) workshop website [is here](https://lucydot.github.io/publication-ready/index.html).
 
 #### image credits
 
