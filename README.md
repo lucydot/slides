@@ -1,5 +1,9 @@
 A repository for my presentation slides, generated using [reveal-md](https://github.com/webpro/reveal-md).  
+
 My homepage is [here](https://lucydot.github.io).
+
+The content of this website (including slides) is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). 
+You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made: © 2019 by Lucy Whalley (CC-BY 4.0). 
 
 ### SSI Fellowship Application 2019
 
