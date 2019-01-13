@@ -11,7 +11,7 @@ You can re-use any of its content as long as the following attribution is includ
 
 Presentation which formed the bulk part of my Fellowship Application to the Sustainable Software Institute, 02/19.
 
-My proposed workshop outline ("Get your code publication ready") [is here](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/workshop_outline.md) and the (beginnings of a) workshop website [is here](https://lucydot.github.io/publication-ready/index.html).
+My proposed workshop outline ("Get your code publication ready") [is here](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/workshop_plan.md) and the (beginnings of a) workshop website [is here](https://lucydot.github.io/publication-ready/index.html).
 
 #### image credits
 
