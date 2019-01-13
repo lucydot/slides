@@ -1,6 +1,6 @@
 A repository for my presentation slides, generated using [reveal-md](https://github.com/webpro/reveal-md).  
 
-My homepage is [here](https://lucydot.github.io). <img src="./world.png" width="400" height="790">
+My homepage is [here](https://lucydot.github.io). <img src="./world.png" width="20" height="20">
 !
 
 The content of this website (including slides) is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). 
