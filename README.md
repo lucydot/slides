@@ -5,7 +5,7 @@ My homepage is [here](https://lucydot.github.io) <img src="./world.png" width="2
 The content of this website (including slides) is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). 
 You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made: © 2019 by Lucy Whalley (CC-BY 4.0). 
 
-### SSI Fellowship Application 2019
+### SSI Fellowship Application 2019 **WIP**
 
 [online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video]()
 
