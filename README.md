@@ -21,8 +21,7 @@ My proposed workshop outline ("Get your code publication ready") [is here](https
 - polkadot background: https://www.freepik.com/free-vector/nice-pattern-with-gold-dots-on-a-white-background_949000.htm
 - computer icon: made by https://www.flaticon.com/authors/simpleicon
 - solar panel icon: made by https://www.flaticon.com/authors/monkik 
-- great britain map: https://www.freepik.com/free-vector/uk-map_2455335.htm
-
+- great britain map: https://www.freepik.com/free-vector/united-kingdom-map-flag-infographics-template_2187242.htm
 
 ### Publishing your Software Project with the Journal of Open Source Software
 
