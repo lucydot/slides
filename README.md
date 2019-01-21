@@ -1,4 +1,4 @@
-A repository for my presentation slides, generated using [reveal-md](https://github.com/webpro/reveal-md).  
+A collection of my presentation slides, generated using [reveal-md](https://github.com/webpro/reveal-md).  
 
 My homepage is [here](https://lucydot.github.io) <img src="./world.png" width="20" height="20">
 
