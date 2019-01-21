@@ -20,6 +20,7 @@ My proposed workshop outline ("Get your code publication ready") [is here](https
 - background icon from https://www.freepik.com
 - polkadot background: https://www.freepik.com/free-vector/nice-pattern-with-gold-dots-on-a-white-background_949000.htm
 - computer icon: made by https://www.flaticon.com/authors/simpleicon
+- solar panel icon: made by https://www.flaticon.com/authors/monkik 
 
 
 ### Publishing your Software Project with the Journal of Open Source Software
