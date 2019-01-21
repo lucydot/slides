@@ -1,76 +1,109 @@
+** Add open science page to my website. Include links to a slides page and applications page (to create: Add Japan app and JOSS app). Highlight that important to see failures. Reproducibility: effmass and Jupyter notebooks. Highlight that Open source is a component of open science. What do I need to improve? Publishing code isn't enough: need to document, which hasn't been done. Previous work. Work in development? Look into Mozilla open science course?? **
+
 ### SSI Fellowship Application 2019
 Lucy Whalley
 
 #### INTRO (1min30)
 Slide 1: title slide
 Hello, my name is Lucy Whalley and this is my application to the SSI Fellowship 2019
+**Include name, PhD student, Imperial College London, slides available link**
+
+PART ONE: WHO AM I? (call out: who are you? - Richard?!)
 
 Slide 2: Who am I? My research
 I am a computational materials scientist. I use high performance computing and solid-state physics to simulate materials on an atomic scale. The hope is that if we understand how the electrons and atoms in existing materials behave, we will be able to design new materials with target properties - for example materials for solar cells with higher light-to-electriciity conversion efficiency - this is the subject of my PhD.
+**computer with atoms on the screen, pointing to solar module under light**
+**objective: to design new materials for energy generation and storage**
 
 Slide 3: Who am I? My software
-I am both a user and developer of software. I use large, highly parallelised code like vasp to run calculations on supercomputers, like Piz Daint. These calculations burn a lot of computer time. these codes output large date files, and I write programmes which try to turn this data into physics. I use the typical python scientific stack (NumPY, Scipy, pandas, pytest), bash, git and have just dipped my toe into Julia.
-Effmass is an example of this
-Also publish smaller scripts and use Jupyter Notebooks as SI to papers.
-I try to work as openly as possible. I publish my code on Github, and just established a workflow for publishing my talks and applications.
+I use and develop software. I use highly parallelised code, optimised for use on supercomputers. These codes output large data files, and I write programmes which try to extract interesting physics from all this data. Effmass is an example of this. I use the typical python scientific stack (NumPY, Scipy, pandas, pytest), bash, git and have just dipped my toe into Julia.
+I try to work as openly as possible. I publish all my code on Github and use Jupyter Notebooks as SI to papers so that it is possible to reproduce my calculation steps. I have recently started sharing my talks and applications (like this one!) online.
+**-user: highly parallelised code, eg: Vasp**
+**-developer: post-processing software, eg: https://github.com/lucydot/effmass**
+**-Python (NumPy, SciPy, Pandas, pytest), bash, git, Julia**
+**-I try to work openly: lucydot.github.io/open**
 
 Slide 4: Who am I? My teaching
-I am a qualified teacher and have taught mathematics in a number of settings: to adults in prisons, to children in primary schools and to. I'm an enthusiastic teacher and enjoy getting people excited about topics they had previously thought were a bit dull. I'm also a software carpentry instructor - but I'll come back to that later.
-
+I am a qualified teacher and have taught mathematics in a number of settings: to adults in prisons, to children in primary schools and to people in cafes. I'm an enthusiastic teacher and enjoy getting people excited about topics they had previously thought were a bit dull. I'm also a trained software carpentry instructor - which leads me nicely onto the next section
+**Pictures montage: me teaching primary school, HMP Birmingham, cafe picture of me teaching**
 
 #### WHAT YOU DO (1min30)
 
+PART TWO: WHAT DO I DO? (call out: what do you do?)
+
+Slide 6: What do I do? I facilitate
+Through software carpentry, I teach programming skills - git, bash and python -  to researchers. This March I'll be leading a one day workshop at Bath for students in the CDT-PV. I also created my own pandas mini-workshop for the Imperial Research Computing summer school last year.
+**-I teach programming skills to researchers: git, bash, Python**
+**-I develop teaching materials: eg, pandas mini workshop**
+**-I organise workshops: one-day Python workshop for PhD students**
+
 Slide 5: What do I do? I learn
-When it comes to building and understanding sustainable software, there's a lot to learn - and it can be hard sometimes to juggle this with the other demands of a PhD. I have found the best way to learn is through attending conferences, like the software carpentry conference, or RSE conference - to meet people in the field and take inspiration from the work they're doing. Last year I set myself the target of publishing a software package with the Journal of Open Source Software, and I learnt a lot from this process. I learnt new to use new tools - like Travis for continuous integration, and I got thoughtful feedback through peer review process which resulted in better tested, better documented code. I've also reviewed for JOSS - again, the main motivation for this was because I would learn something during the process, which I did (MPI data distribution between processors).
-
-
-Slide 6: What do I do? I teach
-As I've mentioned, I'm a software carpentry instructor
-I drank the software carpentry Kool-Aid after realising that the instructor training was better quality than my post-graduate teaching qualification.  I'll come back to this later. Pandas, Python in Korea, Python in CDT
+Last year I attended the RSE conference in Birmingham and CarpentryCon in Dublin, at each I learnt about some of the current challenges and opportunities in the RSE field and got a feel for the community.
+I've learnt a lot as an author and reviewer for the Journal of Open Source Software - as an author, I learnt how to use new tools - like Travis for continuous integration, and I got thoughtful feedback through peer review process which resulted in better tested, better documented code. As a reviewer I learnt about how data is distributed between different compute cores. 
+**-Attending conferences: RSE 2018, CarpentryCon Dublin
+**-The Journal of Open Source Software: as an author and reviewer**
+**-Travis CI and data distribution picture**
 
 Slide 7: I advocate
-I consider myself an advocate for best practice in research software, whilst still acknowledging I have a lot to learn about what that means in theory and in practice. I am on the RSE committee. Teh materials event - 40 people.
+Finally, I  advocate for best practice in my domain. I am a committee member of the Imperial Research Software community and in this role I organised a research engineering in materials science event. This was well attended - I booked catering for 30, and 40 people turned up - from PhD students to professors, we discussed the challenges and opportunities we face in our work. I also gave a talk - "publishing your software project with the journal of open source software".
+**Committee member for the Imperial College Research Software Community**
+**Picture of the talk**
 
 #### WHAT ARE YOUR FELLOWSHIP PLANS?
 
-I'd like to keep on attending conferences, I'd like to give more talks, and keep on teaching - perhaps taking SWCarpentry to some corners of the UK?...but what I really want to spend time talking about is ...
+PART THREE: WHAT ARE MY FELLOWSHIP PLANS?
 
-In my work I have identified a challange:
-identified theough people in research team and from swcarpentry and personal experience!
-Many people are hesitant to share their code - how can we approach this?
-Avoiding single-use software
-We need to convince people that with minimum overhead they can achieve this.
-- Through work with the RSE team at Imperial, I am aware that there are many scientists who have basic coding skills, but that their code is untested, undocumented and inflexible. Software Carpentry is great for absolute beginners, but there seems little in way of support for programmers who want to move beyond the basic syntax and pursue best practice.
-- Experience working with colleagues in materials science (and myself!): "oh, I have a code for that, but it is ugly you wouldn't want to use it" - many versions of the same scripts, unwillingless to share --> results in duplication of work.
+Slide 8:
+Well, I'd like to continue to attend conferences, perhaps taking a more active role (poster or talk) I'd like to have more speaking opportunities, and keep on teaching - perhaps taking SWCarpentry to some corners of the UK?...and I have a project idea
+**Attend RSE conference (present poster or talk?)**
+**SWcarpentry on the Orkney Islands?**
+**Picture of GB and pointing to the Orkney islands**
 
-This is my proposed solution...
-Important to communicate the idea that testing / documentation isn't something advanced to do once perfected basics, but something that will help you develop.
-I think the swcarpentry model works, and I think theres demand for it BUT .... - identify the missing step.
-Use features of a la SWcarpentry: live coding, open lesson development, collaborative note taking
-Do the cycle picture  - not done at the end, but in the middle.
-The inventive is a publication - this gives it something to hang off.
-Longer term we may need to move past the citation framework.
-- Existing projects which teach aspects of coding best practice in a research context have proven impact (https://coderefinery.org/)
+**I have an idea! meme**
 
-Tell me more...
-First it will focus on materials - I know the domain and there is momentum from the materials sessions already held.
-I've tried to keep the plan flexible. At a minimum visit and invite speakers to the UK.
-Put together a day of activities under the banner of "Get your code publication-ready" - I expect I'd do teaching, and have other people interested.
-Best: Put together a SWCarpentry module and publish with JOSE.
-The resources for this workshop will be developed and maintained on Github (or Gitlab). All resources will be open source licensed. They will be developed using the Software Carpentry template (https://github.com/swcarpentry/styles). The resources will be domain-agnostic.
+Slide 9:
+In my work I have identified a challenge:
+I work in a group of computational scientists, but many people are hesitant to share their code - its untested, its undocumented- it can only be used by one person - and this is a problem because it means we all end up with slightly different versions of the same code - and this is inefficient use of researcher time. I call this single-use software, and like the coffee cups, we should be trying to phase it out.
+**The Challenge:**
+**researchers can be reluctant to share their code**
+**undocumented, untested --> "single-use software"
+**picture of coffee cup with single use software on it**
 
+Slide 10:
+Whats the solution?
+We need to incentivise people to learn and use software best practice - to test and document their code. I think that getting a software paper and citations is a great incentive! So my idea is to use this as a carrot, to structure a workshop with publishing your code as the overall aim.
+And it seems to me there is a gap in the market for this workshop. I think Software Carpentry is great for absolute beginners, but there doesn't seem so many workshops which will support for programmers who want to move beyond the basic syntax and pursue best practice.
+I've put part of here, well because I think it's a complex issue and I don't want to overstate what I can achieve, but also
+I recognise that longer term, we may want to move away from a system where academic merit is measured in citations. But in the meantime, I think this is a good idea.
+**(Part of) The Solution**
+**develop a workshop: get your code publication-ready**
+**picture of the publication ready webpage**
+
+Slide 11:
 Who will I work with?
-I wouldn't say this is a new idea, I'd say it's remixing a lot of ideas already out there.
 
-The Code Refinery
-Jeremy (RSE specialist)
-Adam (domain specialist)
-Anna Krystalli
-SSI people: Yo Yehudi, Alice Harpool
+Audience:
+The plan is to work with researchers in materials science initially as there is momentum from the materials science event already held. If it's a success - people report sharing their work as a result of the workshop - the workshop could be developed into a SWCarpentry workshop, developed and hosted on Github, and shared with researchers in other fields.
+
+Collaborators:
+There has been existing work done along these lines and I don't want to reinvent the wheel...
+
+Code Refinery is a Nordic Project that teaches coding best practice in a research context - I would certainly like to attend one of their workshops to learn more about what they are doing. Jeremy Cohen is a SSI (RSE? EPSRC?) Fellow and based at Imperial who has contacts with Code Refinery, and is interested in being involved with this project.
+Adam Jackson, 2018 SSI Fellow, is a materials scientist who I've discussed this with - he may be able to help with part of the workshop development of delivery.
+I think this also complements the work that Anna Krystalli is doing around reproducibility - and we have discussed working together.
+Finally, there are people who I haven't met, but whose work I have seen online - Yo Yehudi and the codeisscience project which I think aligns nicely, and I also see Alice Harpool has blogged about code publication. It would be great to discuss this with them and see what they think.
+
+**Audience: Materials Science initially, if successful --> other domains**
+**Collaborators: The Code Refinery (https://coderefinery.org/), Jeremy Cohen (EPSRC RSE Fellow / RSLondon), Adam Jackson (SSI Fellow 2018), Anna Krystalli (RSE Sheffield) + other SSI Fellows**
 
 #### FINAL THOUGHTS
 
-Slide x: Thank you for listening - follow these links for more information about me, my proposed workshop, and for a copy of these slides.
+Slide 13: 
+Thank you for listening - follow these links for more information about me, my proposed workshop, and for a copy of these slides.
 website link
 slides link
-workshop plan
+workshop plan (including workshop website, and motivation about need to think of docu and testing as not something that comes at the end)
+**Thank you!**
+**Presentation slides:**
+**Workshop plan:**
+**My website:**
