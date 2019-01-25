@@ -9,10 +9,11 @@ You can re-use any of its content as long as the following attribution is includ
 
 ### Slide List
 
-
 <details>
   <summary>SSI Fellowship Application, Feb 2019</summary>
   
+ </br>
+ 
 **Work In Progress**
 
 [online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video]()
@@ -33,6 +34,8 @@ My proposed workshop outline ("Get your code publication ready") [is here](https
 
 <details>
   <summary>Publishing your Software Project with the Journal of Open Source Software, Jan 2019</summary>
+  
+</br>
 
 [online slides](https://lucydot.github.io/slides/JOSS_0119) / [pdf slides](https://lucydot.github.io/slides/JOSS_0119/JOSS_0119.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/JOSS_0119/JOSS_0119_notes.md)
 
