@@ -14,9 +14,9 @@ You can re-use any of its content as long as the following attribution is includ
   
  </br>
  
-**Work In Progress**
 
-[online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video]()
+
+[online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video]() **Work In Progress**
 
 Presentation which formed the bulk part of my Fellowship Application to the Sustainable Software Institute, 02/19.
 
