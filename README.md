@@ -11,7 +11,7 @@ You can re-use any of its content as long as the following attribution is includ
 
 
 <details>
-  <summary><b>SSI Fellowship Application, Feb 2019</b></summary>
+  <summary>SSI Fellowship Application, Feb 2019</summary>
   
 **Work In Progress**
 
@@ -32,7 +32,7 @@ My proposed workshop outline ("Get your code publication ready") [is here](https
 </details>
 
 <details>
-  <summary><b>Publishing your Software Project with the Journal of Open Source Software, Jan 2019</b></summary>
+  <summary>Publishing your Software Project with the Journal of Open Source Software, Jan 2019</summary>
 
 [online slides](https://lucydot.github.io/slides/JOSS_0119) / [pdf slides](https://lucydot.github.io/slides/JOSS_0119/JOSS_0119.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/JOSS_0119/JOSS_0119_notes.md)
 
