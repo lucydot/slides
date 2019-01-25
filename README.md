@@ -5,7 +5,10 @@ My homepage is [here](https://lucydot.github.io) <img src="./world.png" width="2
 The content of this website (including slides) is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). 
 You can re-use any of its content as long as the following attribution is included, and you indicate if changes were made: © 2019 by Lucy Whalley (CC-BY 4.0). 
 
-### SSI Fellowship Application 2019
+<details>
+  <summary>### SSI Fellowship Application 2019</summary>
+
+
 
 **Work In Progress**
 
@@ -22,6 +25,8 @@ My proposed workshop outline ("Get your code publication ready") [is here](https
 - computer icon: made by https://www.flaticon.com/authors/simpleicon
 - solar panel icon: made by https://www.flaticon.com/authors/monkik 
 - great britain map: https://www.freepik.com/free-vector/united-kingdom-map-flag-infographics-template_2187242.htm
+  
+</details>
 
 ### Publishing your Software Project with the Journal of Open Source Software
 
