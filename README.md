@@ -12,11 +12,7 @@ You can re-use any of its content as long as the following attribution is includ
 <details>
   <summary>SSI Fellowship Application, Feb 2019</summary>
   
- </br>
- 
-
-
-[online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video]() **Work In Progress**
+[online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/Lucy_Whalley_SSI_Fellowship.mp4) 
 
 Presentation which formed the bulk part of my Fellowship Application to the Sustainable Software Institute, 02/19.
 
