@@ -5,6 +5,7 @@
 - check there is whiteboard / A-board
 - check what was covered in bash: shell scripts? for loops?
 - who are the helpers?
+- who is teaching part 2?
 - whiteboard pens / marker pens
 - ipad for teaching notes
 - laptop connector
@@ -48,83 +49,140 @@ So here is the outline for this morning
  
 ```
  
-After lunch, Navjot will take over to teach part 2 of the course.
+After lunch, x will take over to teach part 2 of the course.
+The overall aim of this course is to teach the basics of programming, with some examples using Python. What you learn here will be applicable to other languages
 
-The Goal here is to teach the basics of programming, with some examples using Python. What you learn here will be applicable to other languages
+## Writing and running Python code
 
-## writing and running Python code
-There are few different approaches you can use to write and run python code. The plain text approach is where we use a text editor to write a programme. We save that programme with a .py extension to let the OS and us know that it is a python programme. We go to our terminal, and we run the programme. You did something similar in the unix lesson.
+There are few different approaches you can use to write and run python code. The plain text approach is where we use a text editor to write a programme. We save that programme with a .py extension to let the OS and us know that it is a python programme. We go to our terminal, and we run the programme. You probably did something similar in the unix lesson.
 
 The second approach is to use a Jupyter notebook. We write and run the code in the notebook environment. Everything is done in a single place.
-We save as a .ipynb
-This is what we will use to write and run our python code.
--------
+We save as a .ipynb. This is what we will use to write and run our python code.
+Open your terminal - the one you used yesterday - and type
+
 	jupyter notebook 
 
-- this should open a default web browser and open a server (don't close) - this is where all the work is happening.
-it is running locally on your machine: so although it opens a browser, it is not using the internet.
-If you have problems, please use the stickies.
-land on the Home page
-new notebook (Python 3 - few different versions, this is the latest and the one we use)
-rename notebook
-enter code into a code cell (simplest example: maths)
-shift and enter
-the output is printed beneath
-add a comment - show that it doesnt run - useful for comments
+This should open a default web browser and open a server (don't close) - this is where all the work is happening.
+It is running locally on your machine: so although it opens a browser, it is not using the internet.
+This is the landing page, which you should all see on your computers.
 
-you can also use shortcuts: Escape and it changes to blue. you are in command mode. H to bring up shortcut options.
+*If you have problems, please use the stickies*
 
-add markdown this is a format for writing plain text - a text cell. you cant have markdown and python in same cell. show lists and indents, headings, links, latex
-add a picture with wget (connected to internet for this) and displays inline
-(write this up on an A-board)
+-  Click on new notebook and select Python 3 - few different versions, this is the latest one and the one we will use.  
+- We can rename the notebook "Python_Workshop"  
+- We can enter code into a code cell: 2+3  
+- You can see it's a code cell because it says Python here.  
+- And we can run the cell  
+- The output is printed beneath  
+- You can add a comment using a hash "# some simple maths"  
+- And if we run the cell again, nothing changes - the notebook ignores anything after a hash.  
+
+There are lots of keyboard shortcuts. The one I always use is shift and enter to run the cell. Click on the cell, press shift and enter at the same time, and it will run. 
+
+- You can bring up the other shortcuts in the following way.  
+- Click onto the cell and press escape.
+- The cell changes to blue. This is command mode - when you type nothing will appear in the cell.
+- H to bring up shortcut options. You can add new cells, delete cells using shortcuts - I need to get better at using these myself.
+
+We have entered code so far. But you can also enter markdown - format for writing plain text.     
+Switch to markdown.  
+
+- Now when you write something and run it, it will appear as plain text: 
+- You can add headings:
+- And you can add bullet points
+- You can add links
+- And you can use markdown to insert images 
+
+~~~markdown
+# This is a heading
+This is plain text
+
+- item one
+- item two
+
+[This is a link to XKCD](http://xkcd.com)
+
+!\[](http://bit.ly/python_cat)
+~~~
+
+You cant have markdown and python in same cell.
+
+*On whiteboard write basic markdown syntax*
 
 fact that you get comments, pictures, and code in one place is very useful.
 
-*Task (5 minutes): use your notebook to: link to the Imperial webpage, calculate 34226/359, make a bullet pointed shopping list with heading "shopping list"*
+*Task (5 minutes): use your notebook to: a) link to the Imperial webpage; b) calculate 34226/359; c) make a bullet pointed shopping list with heading "shopping list"*
 
 ## Variables and Assignment
-age = 5
-variables are names for values
-In python, = symbol assigns the value on the right to the name on the left
-variable is created when a value is assigned to it
-variables contain letters, digits, \_, cannot start with a digit
-variables which start with an _ have a special meaning so at this point we won't use them.
-python is case sensitive
 
-----
-follow me!!..
-age = 42
+- Variables are names given to values
+- In python, the = symbol assigns the value on the right to the name on the left
+- Variables contain letters, digits, \_
+- Variables cannot start with a digit, and variables which start with a _ have a special meaning so at this point we won't use them.
+- Python is case sensitive
+
+*Type after me*
+
+~~~python
+age = 73
 first_name = 'Clarence'
+~~~
 
-python has a built in function called print that prints things as text.
-Call the function by using it's name, put what you want to print in parenthesis
+- Age is a variable to which we assign the integer value 42.
+- First name is a variable to which we assign the string value Clarence.
+- Python has a built in function called print that prints its function arguments as text.
 
+~~~python
 print(first_name, 'is', age, 'years old')
-these are arguments : on whiteboard function_name(arguments) --> function output
-first name and age are variables, so we don't need to put quotes around them. 'is' and 'years old' are called strings- we want python to print the words 'is' and 'years old' as they are, so we put quotes around them.
-the output is printed beneath
+~~~
+   
+ - This is the function name `print`
+ - These are the function arguments which will be printed
 
-in same cell - put print(last_name) - error message. the first of many! these can be useful,
-its not been defined yet.
-add last_name and run
+*On whiteboard write function_name(arguments)*
 
-can move this to another cell as it has stored the variable.	
-tab completion
+- First name and age are variables, so we don't need to put quotes around them. 'is' and 'years old' are strings and will be printed as they appear - we know this because they have quotes around them.
+- Run the cell with shift and enter
+- The output is printed beneath
 
-the thing I hear most people complain about with Jupyter is that the order of execution matters. for example
+~~~python
+print(last_name)
+~~~
 
+- We get an error message. the first of many! These can be useful, it tells us the variable last_name has not been defined yet.
+- We can add 
+
+~~~python
+last_name = 'Barlow'
+~~~
+
+- And now there is no error message.
+- I can use tab completion. Instead of writing `last_name` I can write `l` then press tab and it will auto-complete.
+- Notice that I have assigned the variable in this cell. And used the variable in another cell. That's fine: the variables are saved for use in the whole of this notebook.	
+- However, you need to be careful because it is the order of code execution that matters  - not the order that the code is written in. And this can cause problems - in fact, when I talk to programmers, I'd say this is there number one complaint about Jupyter Notebooks. For example
+
+~~~python
 print(middle_name)
-middle_name = Dorothy
-run top --> error. run bottom , then run top --> no error. So not changed the code, but the output has changed. do need to be careful. If you get confused as to the value of different variables. I suggest restart and run all:  it will run everything from the top, so you can see errors, and fix them.
+~~~
 
-variables can be used in calculations
+~~~python
+middle_name = Dorothy
+~~~
+- If I run the top then the bottom I get an error
+- If I run the top again, the error has gone. The first time I asked to print the variable `middle_name` it had not been assigned a value, it had not been created, so I got an error. I then assigned a value, this was stored, so when I run the cell again it works. This can cause confusion because I've not changed the code, but the output has changed. We do need to be careful. If you get confused as to the value of different variables. I suggest to click `restart and run all`:  it will run everything from the top, so you can see errors, and fix them.
+
+- The final thing I will show you in this section is that variables can be used in calculations:
+
+~~~python
 age=42
 future_age=age+3
 print('Age in three years',future_age)
+~~~
 
-python doesn't care what variable names you use but you should make them meaningful - this will make it easier for other people, or your future, self to work ut what the programm does. (do an example of making a meaningless variable above.)
+- Python doesn't care what variable names you use but you should make them meaningful - this will make it easier for other people, or your future self, to work out how the programme works. 
+- I can change the variable to sausages and I'll get the same output. But sausages in this context is meaningless so its an example of a bad variable name.
 
-*do swapping values task on whiteboard*
+*Do the swapping values task*
 
 
 ## Data Types and Type Conversion
@@ -137,7 +195,7 @@ string - this is a type (str) text in single or double quotes
 List - a list of one or more values [3,4,5] or ['frog',2,8]
 
 we are going to discuss integer, float, string. Leave List for after break.
-------
+
 built-in function print(type(52)) - see that I can nest functions like this.
 
 fitness = 'not bad'
@@ -182,14 +240,12 @@ print('first is', first, 'and second is', second)
 
 *key point: second does not update automatically when you change the value of first*
 
-----See previous page. Need to be covered?-----
-
-## Built-in functions, help and errors
+## Help and errors
 
 We've come across several built-in functions already. Built in because they are built into the core Python language.
 len, int, str, float, print
 all take an argument, all need parantheses so python knows a function is being called.
------
+
 
 print(max(3,6,7))
 print(min(2,7,8))
@@ -437,26 +493,25 @@ elif grade >= 70:
 	
 ## Recap and closing comments
 
-this is what we have covered since coffee
+This is what we have covered since coffee:
 
-Let's quickly recap what we have covered so far:
-
+```
 - writing and running python code: Jupyter Notebooks, markdown basics
 - variables: variable names, variable assignment, print(), execution order
 - data types: integer, float, string, string operations/indexing/slicing, type conversion: int(), float()
-- functions, help and errors: min(),max(),round(),help(),runtime errors (exceptions), syntax errors, 
+- functions, help and errors: min(),max(),round(),help(),runtime errors (exceptions), syntax errors
 
  break
  
- - lists: sequence type, immutable vs mutable, list method append, del, 
+ - lists: sequence type, immutable vs mutable, list method append, del
  - for loops: dummy variable, loop syntax, index from 0
  - conditionals: if, elif, else, ordering
 
 lunch
+```
 
-What I've covered this morning follows the one online. So if you want to recap, go here, I've not followed it almost exactly.
-
-Python part 2: Navjot teaching
+What I've covered this morning follows the one online. So if you want to recap, go to this link, I've followed it almost teaching.
+Return at 2pm for Python part 2, which x is teaching.
 
 Before we break I'd like to make five closing comments:
 
