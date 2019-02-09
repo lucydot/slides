@@ -1,11 +1,21 @@
----
-title: Slides Template
-separator: <!--s-->
-verticalSeparator: <!--v-->
-theme: white
-revealOptions:
-    transition: 'none'
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Slides Template</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/white.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 
 
 <img src="./carpentries_logo.png"  class="plain" width="300"/>
@@ -19,7 +29,7 @@ revealOptions:
 Lucy Whalley  
 [lucydot.github.io/slides](https://lucydot.github.io/slides)
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 
 ### The trade-off
@@ -27,7 +37,7 @@ Lucy Whalley
 <img src="./costbalance.png"  class="plain" width="400"/>
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Why Python?
 
@@ -37,7 +47,7 @@ Lucy Whalley
 - well documented
 - widely used
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Outline
 
@@ -55,7 +65,7 @@ lunch @ 1
 
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Plain text vs. Jupyter Notebook
 
@@ -69,7 +79,7 @@ lunch @ 1
 	- run code in a `jupyter notebook`
 	- save with a `.ipynb` extension
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -84,13 +94,13 @@ Use your Jupyter notebook to...
 
 [Green sticky when you're done please]
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Variables
 
 <img src="./valuevariable.png"  class="plain" width="400"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -110,7 +120,7 @@ Fill the table showing the values of the variables after each statement is execu
 |----------|--------------|--------------|---------------|
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Data types
 
@@ -130,7 +140,7 @@ Fill the table showing the values of the variables after each statement is execu
 \+ boolean, dict, tuple, complex, None, set
 
 </small>
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -146,7 +156,7 @@ print('first is', first, 'and second is', second)
 ```
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Outline
 
@@ -160,7 +170,7 @@ print('first is', first, 'and second is', second)
 7. **if statements**  
 
 </small>
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Lists
 
@@ -176,20 +186,20 @@ print('first is', first, 'and second is', second)
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### For Loops
 
 <img src="./forloopa.png"  class="plain" width="800"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### For Loops
 
 <img src="./forloopb.png"  class="plain" width="800"/>
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -204,7 +214,7 @@ for number in range(10):
 print(total)
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 ### Conditionals
 
 ```
@@ -220,7 +230,7 @@ if 2 <= mass <= 3:  (check this allowed!)
 	print(mass, ' is just right')
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 
 <div align="LEFT">
@@ -243,7 +253,7 @@ elif grade >= 80:
 elif grade >= 90:
 	print("grade is A")
 ```
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Summary
 
@@ -263,7 +273,7 @@ These slides available at: [lucydot.github.io/slides](lucydot.github.io/slides)
 Back at 2pm for Python part two
 
 </small>
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Closing comments
 
@@ -275,3 +285,57 @@ Back at 2pm for Python part two
 
 ====*Thank-you*====
 
+</script></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {"transition":"none"};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+          Reveal.initialize(options);
+        </script>
+    </body>
+</html>
