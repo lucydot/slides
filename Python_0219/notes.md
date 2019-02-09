@@ -3,6 +3,7 @@
 ## To remember
 
 - check there is whiteboard / A-board
+- Make a little slip with what will be covered
 - check what was covered in bash: shell scripts? for loops?
 - who are the helpers?
 - who is teaching part 2?
@@ -187,106 +188,185 @@ print('Age in three years',future_age)
 
 ## Data Types and Type Conversion
 
-Every value in a program has a specific type.
-You've heard me mention strings - 
-Integer - positive or negative whole numbers (int)
-float - real number like 3.16436 or -0.53 (float)
-string - this is a type (str) text in single or double quotes
+Each value in Python has a specific type.
+```
+integer - (int) - positive or negative whole numbers - 256 -3
+float - (float) - real number - 3.16436 -0.53 
+string - str - alphanumeric text - "hello" "20 pence."
 List - a list of one or more values [3,4,5] or ['frog',2,8]
++ boolean, dict, tuple, complex, None, set
+```
 
-we are going to discuss integer, float, string. Leave List for after break.
+These are the ones we will cover today.
 
-built-in function print(type(52)) - see that I can nest functions like this.
+- Integers and floats are numeric types - they represent numbers - they can be positive or negative. 
+- String and List are sequence types - they are ordered sets of elements
+- Boolean (true or false) and dictionaries are also very useful but we don't have time to cover today. I suggest to look them up when you have time to though.
 
+~~~python
+print(type(52))
+~~~
+
+I am going to nest two functions together. I am asking the python interpreter to print the type of the value 52. Its an int.
+
+~~~python
 fitness = 'not bad'
 print(type(fitness))
+~~~
 
-the value assigned to the variable fitness is a string
+- This tells me that the value assigned to the variable fitness is a string.
+- Types are important because they determine which operations can be performed on a value.
+- For example, I can subtract two integers
 
-types control what operations can be performed on a value
-
+~~~python
 print(5-3)
+~~~
 
-print('hello'-'h') - doesn't work. But there are some cool things you can do with strings:
+- But I can't subtract two strings
 
-	- use + operator: full_name = "Lucy" + "Geoty" ,print(full_name)
+~~~python
+print('hello'-'h')
+~~~
 
-	- use *: separator= "-"*10, print(seperator)
+Here are the operations you can do with strings. 
 
-	- the order of a string matters: gold does not equal dlog. so you can index a string. metal='gold' each position in the string is given a number. this number is called an index. If I want to return the first character of a string I write variable name then the index in square brackets. print(metal[0]). indexing from 0!!!!
+- You can add two strings together
+- You can multiply a string with an integer. The string will repeat 10 times.
 
-	- we can also slice the string. this means take a slice, a piece of it. for example, we can slice gold to get old. to do this we use [start:stop] - start slice, this is the index one after where we stop. print(metal[1:4]).
+~~~python
+full_name = "Lucy" + "Geoty" ,print(full_name)
+separator= "-"*10, print(seperator)
+~~~
 
-	- metal variable is unchanged - still gold. The slice makes a copy, it doens't replace the original.
+The order of a string matters. `gold` does not equal `dlog`. Because strings are ordered, you can index a string.
 
-	- indexing, slicing  - we can do this because we are treating the string like a list of letters, and this is something we can do to any list.
+*Following moving between the board and projector*
 
-	- some functions only work with strings: print(len(full_name)) gives length of the string, print(len(52)) gives an error
+- `metal='gold'`
+- each position in the string is given a number
+- this number is called an index. 
+- indexing is from zero!
+- If I want to return the first character of a string I write variable name then the index in square brackets. 
 
-Question: what do you think the output will be for this command: print(1+'2')
-error. Cant add a string and an int. If I want to add two ints I can do
-print(1 + int('2')) or two stringa
+~~~python
+print(metal[0])
+~~~
+
+- indexing from 0!!!!
+- we can also slice the string. this means take a slice, a piece of it. for example, we can slice gold to get old. to do this we use `[start:stop]` - `start` is where we start the slice, `stop` is the index one after where we want to stop. Easiest is with an example:
+
+~~~python
+print(metal[1:4])
+~~~
+
+- Stop is at 4, not 3
+
+~~~python
+print(metal)
+~~~
+
+- The variable metal is unchanged - still gold. The slice makes a copy, it doens't replace the original.
+- indexing, slicing  - we can do this because we are treating the string like a list of letters, and this is something we can do to any list - we'll see more of it after the break.
+- some functions only work with strings: 
+
+~~~python
+print(len(full_name))
+print(len(52)) 
+~~~
+
+This gives length of the string, whilst the length of a number gives an error
+
+*Question: what do you think will happen when I run this command?*
+
+~~~python
+print(1+'2')
+~~~
+
+You cant add a string and an int. You can do this - convert a string to an int or an int to a string.
+
+~~~python
+print(1 + int('2')) 
 print(str(1)+'2')
+~~~
 
 We are able to mix float and ints
+
+~~~print
 1 / 2.0
+~~~
 
-Discuss what you think this will print..
+*Discuss what you think this will print..*
 
+~~~python
 first = 1
 second = 5\*first
 first=2
 print('first is', first, 'and second is', second)
+~~~
 
-*key point: second does not update automatically when you change the value of first*
+key point: second does not update automatically when you change the value of first*
 
-## Help and errors
+## Functions, help and errors
 
-We've come across several built-in functions already. Built in because they are built into the core Python language.
-len, int, str, float, print
-all take an argument, all need parantheses so python knows a function is being called.
+- We're now going to cover a few miscellaneous things before breaking for coffee: functions, help and errors. 
+- We've come across several built-in functions already. Built in because they are built into the core Python language.
+- *write on board* `len, int, str, float, print`
+- all take an argument, all need parantheses so python knows a function is being called: `function_name(arguments)
+- here are a couple more: the last one doesn't work as you can't compare a number and a float
 
-
+~~~python
 print(max(3,6,7))
 print(min(2,7,8))
+print(max(1,'a'))
+~~~ 
 
-print(max(1,'a')) doesnt work as cant compare a number and a float
+`round` rounds to zero decimal places, but there is an optional argument you can use
 
-
+~~~python
 round(3.712)
-4
-rounds to zero decimal places
-
-but there is an optional argument you can use
 round(3.712, 1)
-3.7
+~~~
 
-but you may ask, how would I know about this optional arguemtn
+- but you may ask, how would I know about this optional arguement?
+- well you can use `help(round)` and this gives documentation
+- In a Jupyter notebook you can also use `help`
 
-you can use help(round) and this gives documentation
-or in jupyter notebook you can also use help?
+~~~python
+help(round)
+round?
+~~~
 
 
-errors: there are two types: exceptions and syntax errors. excetions happen during runtime: when something goes wrong whilst executing the python code. For example
+- Lets move onto errors. 
+- There are two types: runtime errors and syntax errors. 
+- Runtime errors, also known as exceptions, happen whilst the python code is executing. For example:
 
+~~~python
 age=65
 print(aege)
+~~~
 
-this is an exception : specifically the NameError, aege is not defined
+This is an exception : specifically the NameError, aege is not defined - if I correct it, it will run.
 
+
+~~~python
 name=lucy
 print(name[4])
+~~~
 
-this is an exception, a runtime error. IndexError - attempted to access a value that doesn't exist.
+So here is a runtime error. IndexError - attempted to access a value that doesn't exist. Remember, indexing from 0!
 
+~~~python
 print(age
-this is a syntax error: the program can't be parsed and won't even run.
+~~~
 
-name = 'Lucy
-another syntax error
+Now this is a syntax error, I haven't closed the bracket: the program can't be parsed and won't even run.
+
+## Recap
 
 Let's quickly recap what we have covered so far:
 
+```
 - writing and running python code: Jupyter Notebooks, markdown basics
 - variables: variable names, variable assignment, print(), execution order
 - data types: integer, float, string, string operations/indexing/slicing, type conversion: int(), float()
@@ -299,66 +379,94 @@ Let's quickly recap what we have covered so far:
  - conditionals
 
  lunch
+```
 
 After the break, we return to look at lists.
 
---coffee--
+--------
+**coffee break**
+
+-------
 
 ## Lists
 
+```
 Integer - positive or negative whole numbers (int)
 float - real number like 3.16436 or -0.53 (float)
 string - this is a type (str) text in single or double quotes
 List - a list of one or more values [3,4,5] or ['frog',2,8], []. 
+```
 
-We covered the first three
-not looked at list: a list has square brackets and the elements of the list are separated by commas. It can store many values in a single structure. It can be an empty list.
+- We've covered the first three.
+- We've not looked at list: 
+- A list has square brackets and the elements of the list are separated by commas. 
+- It can store many values in a single structure.
+- It can be an empty list.
+- We discussed because a string is an ordered list of letters, you can index and slice. So we can do that for lists too, and we'll build on that now.
 
-Integers and floats are numeric types, which means they hold numbers. 
-Strings, lists, and tuples are sequence types, so called because they behave like a sequence - an ordered collection of objects.
-We discussed because a string is an ordered list of letters, you can index and slice. So we can do that for lists too, and we'll build on that now.
-
-----
-
-pressures = [0.3255,0.2462,0.2352] \(you can do random numbers)
+~~~python
+pressures = [0.3255,0.2462,0.2352] 
 print('pressures: ', pressures)
 print('length: ', len(pressure))
-print('last pressure in list: ', pressures[2])  # not 3! can also do
+print('last pressure in list: ', pressures[2])  
 print('last pressure in list: ', pressures[-1])
+~~~
 
-if I want to replace an item I can do
+- You can print lists, get the length of lists, and access the final element it two different ways. `-1` indexes the final element of a list in python.
+- If I want to modify an item in the list I can do
 
+~~~python
 pressures[0] = 0.001
 print ('pressure is now: ',pressures)
+~~~
 
-I can try to do this for a string
+- I've replaced the first item of the list with 0.001
+- I can try and do this for a string
+
+~~~python
 name="lucy"
 lucy[0] = b
-error. because character strings are immutable: cant be changed after creation
-lists are mutable. they can be modified in place.
+~~~
 
-Each value type has a set of methods which can be used. For example
+- And I get an error. But I told you that a string is a list of characters: so why can I replace the first item of a list, but not replace the first item of a string?
+- Because string characters are immutable. This means they can't be changed after creation. But lists are mutable, the items of a list can be modified.
+- Each Python type has a set of methods which can be used. For example:
 
+~~~python
 pressures.append(0.252)
 print ('longer pressure list: ', pressures)
+~~~
 
+- Here I've used the list method `append` to append a value onto the end of the list.
+
+~~~python
 age = 32
 age.append(14)
-can you guess what you think will happen?
-error - append is a method for a list. This is an integer, it doens't have the append method.
+~~~
 
+*What do you think will happen here?*
+
+An error - `append` is a method for a list. This is an integer, it doens't have the append method.
+
+~~~python
 pressures.append([0.1355])
 print ('longest pressure list: ', pressures)
+~~~
 
-we now have a list within our lists: it is a 2-dimensional list.
+- We now have a list within our lists: it is a 2-dimensional list.
+- If I want to remove the last item I can use 
 
-say I want to remove the last item . I can use 
-del pressures[-1] # remove the last thing
+~~~python
+del pressures[-1] 
+~~~
+
+Which removes the last item.
 
 ## For Loops
 
 A for loop is used to execute the same command multiple times.
-example on overhead:
+
+```
 
 for number in [2,3,5]:
 	print(number)
@@ -369,70 +477,84 @@ print(2)
 print(3)
 print(5)
 
-bit of a silly example but you can see how this could be really useful.
-You've seen for loops in the bash course yesterday, so the concept is the same, but the syntax a little different
+```
 
-- all for loops have a collection (2,3,5)
-- a loop variable (number)
-- a body
-- loop through the collection. first time, number=2, second time number=3,..
+- It's a bit of a silly example but you can see how this could be useful if you wanted, for example, to do the same piece of analysis on several sets of data.
+- You've seen for loops in the bash course yesterday, so the concept is the same:
+	- all for loops have a sequence [2,3,5]
+	- a loop variable 
+	- a body
+- We loop through the sequence. first time, number=2, second time number=3,..
+- The syntax is a little different from bash
+	- first line ends in colon
+	- body indented : indentation is important in python
 
-syntax:
-- first line ends in colon
-- body indented : indentation is important in python
-
+~~~python
 for number in [2,3,5]:
 print(number)
---> error
 
 for number in [2,3,5]
 	print (number)
--->error
 
 for number in [2,3,5]:
 	print(number)
+~~~
 
-can change this loop variable to anything - its a dummy variable. For example
+- You can change this loop variable to anything - its a dummy variable. For example:
+
+~~~python
 for cat in [2,3,5]:
 	print (cat)
+~~~
 
-gives the same thing. Of course cat is a silly variable name in this instance, should use something meaningful, like number.
+- This gives the same output. Of course cat is a silly variable name in this instance, should use something meaningful, like number.
+- We can add multiple statements to the loop body
 
-We can add multiple statements to the loop body
-
+~~~python
 for number in [2,3,4]:
 	squared = number\*2
 	cubed = number\*3
 	print(number, squared, cubed)
+~~~
 
-what about if I wanted to loop over a large number of numbers. Use range
+- But what about if I wanted to loop over a large number of numbers? Use `range`
 
+~~~python
 for number in range(0,5):
 	print(number)
+~~~
 
-range is not a list, it is an iterable - you can interate over it. It is a more efficient way to loop over large ranges.
+- `range` is not a list, it is an iterable - you can interate over it. It is more efficient to loop over range than a list of integers.
 
+~~~python
 for number in range(5):
 	print(number)
+~~~
 
-by default, if one value given then the first value is set to zero- it will start at 0.
+-By default, if one argument is given to the `range` function then the first value is set to zero - it will start at 0.
 
----question---
-I want to sum the first 10 integers. What is wrong with this code?
+*Question: I want to sum the first 10 integers. What is wrong with this code? How can I fix it (there is more than one way)*
 
-total = o
+```
+total = 0
 for number in range(10):
 	total = total + number
 print(total)
+```
 
-adds 0 to 9, not 1 to 10.
-2 ways to fix this. range(11) or range(1,11) or number+1
+- It will add 0 to 9, not 1 to 10.
+- There are two ways to fix this. `range(11)` or `range(1,11)` or `number+1`.
 
 ## Conditionals
 
-Final section!
-if statements are used to control whether a block of code is executed
+- This is the final section!
+- `if` statements are used to control whether a block of code is executed
+- The structure is similar to a `for` loop. First line opens with if and ends in colon.
+- The body which can contain one or more statements is indented
+- Mass is 4.2. If it's more than 3 it will print "4.2 is large"
+- If it's between 2 and 3 inclusive it will print "4.2 just right"
 
+```
 mass = 4.2
 
 if mass > 3:
@@ -443,14 +565,14 @@ if mass < 2:
 
 if 2 <= mass <= 3:  (check this allowed!)
 	print(mass, ' is just right')
+```
 
-structure is similar to a for loop. First line opens with if and ends in colon.
-Body containing one or more statements is indented
+- We can combine conditionals and a `for` loop.
+- For each mass it will test if the condition is met. If so, it will print.
+- We can add an else statement: this executes a block of code when an if condition is not true. `else` must come after `if`
+- We can add an elif to specify additional tests. `elif` must come after an `if` and before any `else` statement.
 
------
-
-we often use conditionals in a for loop for example
-
+~~~python
 masses = [2.4,2.3,7.4,1.4,5.6]
 for m in masses:
 	if m>3.0:
@@ -459,18 +581,12 @@ for m in masses:
 		print(m, 'is small')
 	else: 
 		print(m, ' is just right')
+~~~
 
-notice print statement is now indented twice from the left.
+- The order matters. Once a condition is met python will not test any of the following conditions.
+- For example, if you were teaching an undergraduate class a mistake like this could be disasttrous for you students
 
-we can add an else statement: this executes a block of code when an if condition is not true
-
-cn add in elif to specify additional tests.
-elif and else can only be used after an ifstatement. elif must come before else.
-
-order matters: once a condition is met python will not test any of the following conditions.
-
-if you were teaching an undergraduate class a mistake like this could be disasttrous for you students
-
+```
 grade = 95
 
 if grade >= 70:
@@ -479,9 +595,13 @@ elif grade >= 80:
 	print("grae is B")
 elif grade >= 90:
 	print("grade is A")
+```
 
-need to re-order these...ask students to do this
+*Question: what is wrong with the code as it is written? Use your Jupyter notebook to investigate. Re-write it so that it works as intented*
 
+Correct answer:
+
+```
 grade=95
 
 if grade >= 90:
@@ -490,6 +610,7 @@ elif grade >= 80:
 	print("grae is B")
 elif grade >= 70:
 	print ("grade is C")
+```
 	
 ## Recap and closing comments
 
@@ -501,7 +622,7 @@ This is what we have covered since coffee:
 - data types: integer, float, string, string operations/indexing/slicing, type conversion: int(), float()
 - functions, help and errors: min(),max(),round(),help(),runtime errors (exceptions), syntax errors
 
- break
+break
  
  - lists: sequence type, immutable vs mutable, list method append, del
  - for loops: dummy variable, loop syntax, index from 0
@@ -515,6 +636,7 @@ Return at 2pm for Python part 2, which x is teaching.
 
 Before we break I'd like to make five closing comments:
 
+```
 - First: comment your code. It may be boring, you may not feel like you have the time - but trust me, your future self will thank you for it. Document why you have written something a certain way.
 
 - Second: use version control. Yesterday you learnt how to use git. I use git to version control all of my code. That way, If I write something and it breaks the code, I can easily go back to an earlier version of the code - again, some time investment now will save you time in the future.
@@ -522,6 +644,7 @@ Before we break I'd like to make five closing comments:
 - Third: care about reproducibility. One of the cornerstones of science, but it is still very hard to reproduce scientific results. You'll see this afternoon how you can use Jupyter notebooks to import and analyse data. This can then be published alongside an academic paper so that people can reproduce your results. I've done this, and I know people have used this.
 
 - Fourth: stay confident. Even though Python is "easy" it can still feel pretty hard sometimes. And sometimes it can feel like you are the only one who finds it difficult - it can get demoralising. All I can say is stick with it, and realise that most of the people around you are probably finding it just as difficult.
+```
 
 
 
