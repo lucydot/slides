@@ -39,10 +39,17 @@ Lucy Whalley
 
 <!--s-->
 
+### Why Python?
+
+<img src="./scipy.png"  class="plain" width="600"/>
+
+
+<!--s-->
+
+
 ### Outline
 
-
-
+<small>
 1. running python code  
 2. variables   
 3. data types  
@@ -50,7 +57,7 @@ Lucy Whalley
 5. lists  
 6. for loops  
 7. if statements                     
-
+</small>
 lunch @ 1
 
 
