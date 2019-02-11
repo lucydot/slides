@@ -10,7 +10,7 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
-  <summary>"Defects and Distortions in Hybrid Halide Perovskites"</summary>
+  <summary>Defects and Distortions in Hybrid Halide Perovskites, Feb 2019</summary>
 
 [online slides](https://lucydot.github.io/slides/TYCD_0219) 
 
