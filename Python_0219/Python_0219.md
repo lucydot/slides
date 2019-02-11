@@ -48,7 +48,6 @@ Lucy Whalley
 
 
 ### Outline
-
 <small>
 1. running python code  
 2. variables   
@@ -57,9 +56,13 @@ Lucy Whalley
 5. lists  
 6. for loops  
 7. if statements                     
-</small>
+
 lunch @ 1
 
+
+>Aim: To learn the basics of programming, with some examples using Python
+
+</small>
 
 
 <!--s-->
