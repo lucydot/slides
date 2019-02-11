@@ -3,12 +3,12 @@ Lucy Whalley
 
 #### INTRO
 -----
-Hello, I'm Lucy and I am a PhD student in the materials department and I'll be speaking over the next 10-15 minutes about publishing your software project with the journal of open source software - and when I refer to this journal I'm going to use the acronym JOSS.
+Hello, I'm Lucy and I am a PhD student in the materials department and I'll be speaking over the next 10-15 minutes about publishing your software project with the journal of open source software - and when I refer to this journal I'm going to use the acronym JOSS. JOSS is a fairly new journal, it's been running for 3 years, and there have been about 450 software projects published with JOSS. I've submitted a software project with JOSS, and I've reviewed for JOSS and I wanted to share what I've learnt through that process.
 
 So I'm a PhD student in the MDG group here in the materials department at Imperial, the group is led by aron walsh.
 We model materials on the atomic scale -  we are interested in the properties of the electrons and atoms, and how these properties can be tuned to design, for example, more efficient solar cells. To do this, we run calculations on supercomputers, using DFT codes like the ones which Laura develops. We also write our own code, but these tend to be smaller pieces of code used for post-processing the DFT output.
 -----
-Effmass is an example of this. This is a python package for calculating the effective mass of an electron in a semiconductor. I think the story of effmass will be familiar to other people - I started my PhD, and was asked to extend an existing code. This grew into a standalone package, effmass, which I published with JOSS.
+Effmass is an example of this. This is a python package for calculating the effective mass of an electron in a semiconductor.When I started my PhD, and was asked to extend an existing code. This grew into a standalone package, effmass, which I published with JOSS.
 Effmass is accompanied by a scientific study which is in review with a more traditional research journal. So I see effmass as a tool that can be used and extended by other researchers, but it also enables all the results in my paper to be reproduced.
 -----
 Before I continue I want to emphasise that JOSS works quite differently from other academic journals. Your work does not need to be on the cutting edge of software development - if you can demonstrate that there is a need for it, for example it may be easier to use, or faster than existing tools, and if it follows best practice, then it will get published. And once you have this best practice in place, the process should be quick.
@@ -26,7 +26,7 @@ And, because the reviewers are often from your field of research, it was a good 
 -----
 Now, what about benefits to the wider scientific community?
 With each JOSS submission there is another well-documented and well-tested piece of software freely available to the community.
-But more than this, it enables reproducibile - this article has an inflammatary title but it's an interesting read. The author points out that the traditional research journal model was established 400 years ago. Back then you could fit the derivation and table of data on a single page, but that's not the case now. Our methods now, increasingly, consist of various scripts, pieces of software - and if these are not reported then the results are not reproducible. JOSS provides a way to publish our computational methods, it enables reproducible science.
+But more than this, it enables reproducibile - this article has an inflammatary title but it's an interesting read. The author points out that the traditional research journal model was established 400 years ago. Back then you could fit the derivation and table of data on a single page, but that's not the case now. Our methods now, increasingly, consist of various scripts, pieces of software - and if these are not reported then the results are not reproducible. JOSS provides a way to publish our computational methods, it encourages reproducible science.
 -----
 #### THE JOSS WORKFLOW
 -----

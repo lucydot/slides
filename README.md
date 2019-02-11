@@ -10,6 +10,15 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
+  <summary>Software Carpentry: Python Part One, Feb 2019</summary>
+
+[online slides](https://lucydot.github.io/slides/Python_0219) / [pdf slides](https://lucydot.github.io/slides/Python_0219/Python_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/Python_0219/Python_0219_notes.pdf)
+
+Slides and notes for part one of the Software Carpentry Python workshop, taught at Imperial College London in February 2019. The course webpage is [here](https://imperialcollegelondon.github.io/python-novice-mix/), and I follow (most of) it.
+
+</details>
+
+<details>
   <summary>SSI Fellowship Application, Feb 2019</summary>
   
 [online slides](https://lucydot.github.io/slides/SSI_0219) / [pdf slides](https://lucydot.github.io/slides/SSI_0219/SSI_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/SSI_0219_notes.md) / [video](https://github.com/lucydot/slides/raw/gh-pages/SSI_0219/Lucy_Whalley_SSI_Fellowship.mp4) 
