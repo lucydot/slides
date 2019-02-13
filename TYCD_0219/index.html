@@ -88,12 +88,15 @@ L.D. Whalley et al. | J. Chem. Phys (2017) | [doi:10.1063/1.4984964](https://aip
 
 #### Outline
 
-1. Non-parabolic effective mass   
-(Electronic band **Distortion**)
-2. Band gap broadening  
-(Anharmonic lattice **Distortion**)
-3. Carrier trapping  
-(H-centre **Defects**)
+1. Electronic band **Distortion**  
+-> Non-parabolic effective mass   
+
+2. Anharmonic lattice **Distortion**  
+-> Band gap broadening  
+
+3. Iodine interstitial **Defect**  
+-> Carrier trapping  
+
 
 </script></section><section  data-markdown><script type="text/template">
 
@@ -125,6 +128,9 @@ L.D. Whalley et al. | J. Chem. Phys (2017) | [doi:10.1063/1.4984964](https://aip
 | CdTe | hole      |    1.25| 1.49| 1.64|
 |  | electron     |    0.72 | 0.94| 1.02 |
 
+</br>
+
+
 *effmass: An effective mass package*   
 L. D. Whalley | JOSS (2018) | [doi:10.21105/joss.00797](https://doi.org/10.21105/joss.00797)
 </small>
@@ -136,11 +142,7 @@ L. D. Whalley | JOSS (2018) | [doi:10.21105/joss.00797](https://doi.org/10.21105
 
 #### The optical effective mass
 <small>
->At a carrier concentration of $10^{20}\,\textrm{cm}^{-3}$ the optical effective mass has increased by a factor of two
-
-<img src="./images/optical_mass_concentration_MAPI.png"  class="plain" height="400"/>
-
-
+<img src="./images/optical_mass_concentration_MAPI.png"  class="plain" height="480"/>
 
 *Impact of non-parabolic electronic band structure on the properties of PV materials*   
 L. D. Whalley et al. | In Review | [arXiv:1811.02281v2](https://arxiv.org/pdf/1811.02281.pdf)
@@ -152,10 +154,7 @@ L. D. Whalley et al. | In Review | [arXiv:1811.02281v2](https://arxiv.org/pdf/18
 
 #### Electron mobility
 <small>
->At a carrier concentration of $10^{20}\,\textrm{cm}^{-3}$ the electron mobility has decreased by a factor of three
-
-<img src="./images/mobility.png"  class="plain" height="400"/>
-
+<img src="./images/mobility.png"  class="plain" height="480"/>
 
 Polaron mobility code available at [github.com/jarvist/PolaronMobility.jl](https://github.com/jarvist/PolaronMobility.jl)
 
@@ -167,12 +166,15 @@ Polaron mobility code available at [github.com/jarvist/PolaronMobility.jl](https
 
 #### Outline
 
-1. Non-parabolic effective mass   
-(Electronic band **Distortion**)
-2. Band gap broadening  
-(Anharmonic lattice **Distortion**)
-3. Carrier trapping  
-(H-centre **Defects**)
+1. Electronic band **Distortion**  
+-> Non-parabolic effective mass   
+
+2. Anharmonic lattice **Distortion**  
+-> Band gap broadening  
+
+3. Iodine interstitial **Defect**   
+-> Carrier trapping  
+
 
 
 </script></section><section  data-markdown><script type="text/template">
@@ -203,9 +205,7 @@ Mode-mapping code available at [github.com/JMSkelton/ModeMap](https://github.com
 
 #### Band gap broadening
 <small>	
-> Soft anharmonic octahedral tilting modes increase the band gap of CH$_3$NH$_3$PbI$_3$ 
-
-<img src="./images/dos_eg_combined_h.png"  class="plain" width="1200"/>
+<img src="./images/dos_eg_combined_h.png"  class="plain" width="1000"/>
 
 *Phonon anharmonicity, lifetimes, and thermal transport in CH$_3$NH$_3$PbI$_3$ from many-body perturbation theory*  
 L. D. Whalley et al. | Phys. Rev. B (2017) | [doi:10.1103/PhysRevB.94.220301](https://doi.org/10.1103/PhysRevB.94.220301)
@@ -218,40 +218,74 @@ L. D. Whalley et al. | Phys. Rev. B (2017) | [doi:10.1103/PhysRevB.94.220301](ht
 
 #### Outline
 
-1. Non-parabolic effective mass   
-(Electronic band **Distortion**)
-2. Band gap broadening  
-(Anharmonic lattice **Distortion**)
-3. Carrier trapping  
-(H-centre **Defects**)
+1. Electronic band **Distortion**  
+-> Non-parabolic effective mass   
+
+2. Anharmonic lattice **Distortion**  
+-> Band gap broadening  
+
+3. Iodine interstitial **Defect**   
+-> Carrier trapping  
+
 
 
 </script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="./images/background_tl.png" -->
 
-#### Killer defects
+#### <span style="color:red">Killer</span> defects
 <small>
-<img src="./images/SRH.png"  class="plain" width="600"/>
+<img src="./images/SRH.png"  class="plain" width="800"/>
 
-> "..among native point defects..only the iodine vacancy and its complexes
-induce deep electron and hole trapping"  
 
-M. -H. Du | Phys. Chem. Lett. (2015) | [DOI:10.1021/acs.jpclett.5b00199](https://doi.org/10.1021/acs.jpclett.5b00199)
 
 
 </small>
 
 
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="./images/background_tl.png" -->
+
+#### <span style="color:red">Killer</span> defects
+
+</br>
+</br>
+
+<section>
+    <img style="float: left" src="./images/MHDu_adapted.png"  class="plain" width="380"/>
+
+
+</br>
+</br>
+</br>
+
+"..among native point defects..only the iodine interstitial and its complexes
+induce deep electron and hole trapping"
+
+</br>
+</br>
+
+<small>
+
+*Density Functional Calculations of Native Defects in CH3NH3PbI3:
+Effects of Spin−Orbit Coupling and Self-Interaction Error*  
+M. -H. Du | Phys. Chem. Lett. (2015) | [DOI:10.1021/acs.jpclett.5b00199](https://doi.org/10.1021/acs.jpclett.5b00199)
+    
+</section>
+
+<small>
+
+
+
+
+</small>
 
 
 </script></section><section  data-markdown><script type="text/template">
 
 #### H-centres in MAPI
 <!-- .slide: data-background="./images/background_tl.png" -->
-
-<img src="./images/H-centre.png"  class="plain" width="1200"/>
-
 <small>
+<img src="./images/H-centre.png"  class="plain" width="1200"/>
 
 *H-Center and V-Center Defects in Hybrid Halide Perovskites*    
 L. D. Whalley et al. | ACS Energy Lett. (2017) | [doi:10.1021/acsenergylett.7b00995](https://doi.org/10.1021/acsenergylett.7b00995)
@@ -263,7 +297,7 @@ L. D. Whalley et al. | ACS Energy Lett. (2017) | [doi:10.1021/acsenergylett.7b00
 ### Summary
 <!-- .slide: data-background="./images/background_tl.png" -->
 
-<img src="./images/summary.png"  class="plain" width="1200"/>
+<img src="./images/summary.png"  class="plain" width="1600"/>
 
 
 </script></section><section  data-markdown><script type="text/template">
@@ -280,7 +314,6 @@ Presentation slides: [lucydot.github.io/slides](https://lucydot.github.io/slides
 
 #### Questions?
 
-Calculation details:
 
 </script></section><section  data-markdown><script type="text/template">
 
