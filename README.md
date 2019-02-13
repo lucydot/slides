@@ -10,6 +10,16 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
+  <summary>Defects and Distortions in Hybrid Halide Perovskites, Feb 2019</summary>
+
+[online slides](https://lucydot.github.io/slides/TYCD_0219) 
+
+Slides from my talk at the Thomas Young Centre student day, Imperial College London, February 2019.
+
+</details>
+
+
+<details>
   <summary>Software Carpentry: Python Part One, Feb 2019</summary>
 
 [online slides](https://lucydot.github.io/slides/Python_0219) / [pdf slides](https://lucydot.github.io/slides/Python_0219/Python_0219.pdf) / [presentation notes](https://github.com/lucydot/slides/raw/gh-pages/Python_0219/Python_0219_notes.pdf)

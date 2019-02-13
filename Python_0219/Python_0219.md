@@ -48,7 +48,6 @@ Lucy Whalley
 
 
 ### Outline
-
 <small>
 1. running python code  
 2. variables   
@@ -57,9 +56,13 @@ Lucy Whalley
 5. lists  
 6. for loops  
 7. if statements                     
-</small>
+
 lunch @ 1
 
+
+>Aim: To learn the basics of programming, with some examples using Python
+
+</small>
 
 
 <!--s-->
@@ -205,7 +208,7 @@ print('first is', first, 'and second is', second)
 I want to sum the first 10 integers. What is wrong with this code? How can I fix it?
 
 ```
-total = o
+total = 0
 for number in range(10):
 	total = total + number
 print(total)
@@ -223,7 +226,7 @@ if mass > 3:
 if mass < 2:
 	print(mass, ' is small')
 
-if 2 <= mass <= 3:  (check this allowed!)
+if 2 <= mass <= 3:  
 	print(mass, ' is just right')
 ```
 
