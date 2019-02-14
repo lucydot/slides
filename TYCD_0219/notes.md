@@ -39,37 +39,44 @@ Slide 5: Outline
 
 I want to talk about 3 things today. The first is related to the concept of effective mass. We are interested in the effective mass because it is a critical parameter in models for the optical and transport properties of a semiconductor. 
 
-Slide 5: Non-degenerate semiconductor
+Slide 6: Non-degenerate semiconductor
 
-When a solar cell is operating beneath the sun, there is a relatively low carrier density of electrons and holes. At these low carrier densities the electronic bands can be approximated as parabolic, so they can be approximated with this dashed line.
-When we calculate the effective mass of the carriers using this definition - we see that for a parabolic band, the effective mass is constant.
+When a solar cell is under normal operating conditions, beneath the sun, there is a relatively low carrier density of electrons and holes. At these low carrier densities the electronic bands can be approximated as parabolic, so they can be approximated with this dashed line.
+We will use this definition for the effective mass.  And when we apply this to a parabolic band, we get a constant effective mass. The standard textbook definition is related to the curvature of the band, the second derivative. For a parabolic band, they will both give the same result. 
 
+Slide 7: Degenerate semiconductor
 
-Slide 6: Degenerate semiconductor
-
-However as the carrier density is increased - under illumination for a photoluminescence study, forexample - the carrier density increases. And at a certain carrier density, the bands can no longer be approximated with a parabola.
+Now lets consider what happens if the carrier density is increased - for example, if the material was put under laser for a photoluminescence study, for example. Well at a certain carrier density, the bands can no longer be approximated with a parabola.
 So we now approximate the electronic dispersion with two parameters - the mass at band edge, and the alpha parameter. 
 This alpha parameter describes a flattening of the bands away from and edge. When alpha = 0 we have a perfectly parabolic dispersion.
-And when we apply our definition for effective mass, we see that the effective mass increases as we move away in energy from the band edge. So this E here, thats referenced to the band edge. 
+When we apply our definition for effective mass to this dispersion, we see that the effective mass increases as we move away in energy from the band edge. So this E here, thats referenced to the band edge. 
 
 And my research questions for this project were:
 What is the extent of band non-parabolicity in MAPI?
-To what extent does this affect the effective mass and mobility of electrons?
+To what extent does this affect optical and transport properites?
 
-slide 7: The alpha parameter
+slide 8: The alpha parameter
 
-So we are able to quantify the extent of non-parabolicity with the alpha parameter.
+We are able to quantify the extent of non-parabolicity with the alpha parameter.
 alpha parameter of zero: perfectly parabolic
-MAPI -perovskie
-cdTe another PV material
-Use Density Functional Theory to calculate the bandstructure of this material. cite effmass code.
-Explain why I expect hole to be non-parabolic than electron
+These are the result for MAPI, the perovskite, and CdTe, which is another photovoltaic material.
+I want to highlight two things; that MAPI is more non-parabolic - it has a larger value for alpha -  in than CdTe in the [100] and [110] directions, and that MAPI is more anisotropic. For example, the CdTe electron has roughly the same value for the alpha parameter in each direction. For MAPI , We see increased non-parabolicity in the [100] direction. 
+To calculate the alpha parameter I used density functional theory to calculate the bandstructure, and wrote a small piece of software to extract the effective mass and alpha parameter. The software is published and available here.
 
-slide 8: the optical effective mass
+slide 9: The optical effective mass
 
-slide 9: electron mobility
+We can then calculate the effective mass, and we see, as expected, that it increases more rapidly in the [100] direction which had the highest alpha parameter. At a concentration of 10^20 which is achievable under laser, the effective mass has doubled.
 
+slide 10: Electron mobility
+
+We can then use this optical effective mass value and use it to calculate the electron mobility. The mobility model I am using here is a first principles model, where we assume that the electron mobility is limited by scattering from optical phonons. At a carrier concentration of 10^20 we see that the electron mobility decreases by a factor of 3.
+
+The code for this was written by Jarvist Frost, and is available online.
 (so the title of my talk is distortions and defects that was my first distortion - a non-parabolic distortion. The second distortion is related to the atomic lattice)
+
+slide 11: Outline
+
+Now lets move onto the second distortion - a lattice distortion.
 
 slide 10: Lattice anharmonicity
 
