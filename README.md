@@ -10,6 +10,15 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
+  <summary>Python Parts One and Two, March 2019</summary>
+
+[online slides](https://lucydot.github.io/slides/Python_0319)
+
+Slides for parts one and two of a Python workshop, taught at the University of Bath in March 2019. The course webpage is [here](https://lucydot.github.io/python_novice). The course is an adapted version of the Software Carpentry python novice workshop. It uses plotting UV-Vis data as a motivating example  - so should be better suited to the typical physicist than the original.
+
+</details>
+
+<details>
   <summary>Defects and Distortions in Hybrid Halide Perovskites, Feb 2019</summary>
 
 [online slides](https://lucydot.github.io/slides/TYCD_0219) 
