@@ -1,11 +1,21 @@
----
-title: Slides Template
-separator: <!--s-->
-verticalSeparator: <!--v-->
-theme: white
-revealOptions:
-    transition: 'none'
----
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Slides Template</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/white.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 
 
 <img src="./carpentries_logo.png"  class="plain" width="300"/>
@@ -20,7 +30,7 @@ Lucy Whalley
 [lucydot.github.io/slides](https://lucydot.github.io/slides)
 [lucydot.github.io/python_novice](https://lucydot.github.io/python_novice)
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 
 ### The trade-off
@@ -28,7 +38,7 @@ Lucy Whalley
 <img src="./costbalance.png"  class="plain" width="400"/>
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Why Python?
 
@@ -39,7 +49,7 @@ Lucy Whalley
 - widely used
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 ### Outline
 
 
@@ -53,7 +63,7 @@ Lucy Whalley
              
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Plain text vs. Jupyter Notebook
 
@@ -67,7 +77,7 @@ Lucy Whalley
 	- save with a `.py` extension
 	- run code using a terminal
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -82,13 +92,13 @@ Use your Jupyter notebook to...
 
 [Green sticky when you're done please]
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Variables
 
 <img src="./valuevariable.png"  class="plain" width="400"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -103,7 +113,7 @@ position = initial
 initial = 'right'
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -118,7 +128,7 @@ first=2
 print('first is', first, 'and second is', second)
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Data types
 
@@ -139,7 +149,7 @@ print('first is', first, 'and second is', second)
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -164,7 +174,7 @@ third = "1.1"
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Outline
 
@@ -178,7 +188,7 @@ third = "1.1"
 7. **if statements**  
 
 </small>
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Lists
 
@@ -194,20 +204,20 @@ third = "1.1"
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### For Loops
 
 <img src="./forloopa.png"  class="plain" width="800"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### For Loops
 
 <img src="./forloopb.png"  class="plain" width="800"/>
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 
@@ -222,7 +232,7 @@ for number in range(10):
 print(total)
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 ### Conditionals
 
 ```
@@ -238,7 +248,7 @@ if 2 <= mass <= 3:
 	print(mass, ' is just right')
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 
 <div align="LEFT">
@@ -257,7 +267,7 @@ elif grade >= 80:
 elif grade >= 90:
 	print("grade is A")
 ```
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Summary
 
@@ -277,7 +287,7 @@ Workshop materials are available at: [lucydot.github.io/python_novice](https://l
 Back tomorrow at 10.15am for Python Part Two
 
 </small>
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Outline
 
@@ -291,7 +301,7 @@ Back tomorrow at 10.15am for Python Part Two
 7. running code as a Python script
 8. Programming good practice     
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Functions
 
@@ -299,7 +309,7 @@ Back tomorrow at 10.15am for Python Part Two
 def print_greeting():
 	print ("Hello!")
 ```
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Functions
 ```
@@ -307,7 +317,7 @@ def print_personalised_greeting(name):
 	print ("Hello "+name)
 ```
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 
 <div align="LEFT">
@@ -323,7 +333,7 @@ def first_negative(values):
 		if ____:
 			return ____
 ```
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Variable Scope
 
@@ -335,15 +345,15 @@ def adjust(t):
     return temperature
     
 ```
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 ### Python scientific libraries
 
 <img src="./scipy.png"  class="plain" width="600"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <img src="./functionmethodpackage.png"  class="plain" width="400"/>
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 <div align="LEFT">
 ### Task
 
@@ -354,7 +364,7 @@ You want to select a random character from a string. ` "base = ATCHAGHRASG" `
 3. try to write a program that uses that function
 
 Feel free to look online (search for "Python standard library")
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Outline
 
@@ -371,12 +381,12 @@ Feel free to look online (search for "Python standard library")
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Indexing arrays
 <img src="./python-zero-index.png"  class="plain" width="1000"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 <div align="LEFT">
 ### Task
@@ -392,21 +402,21 @@ letters[2,1] letters[1,0] - letters[0,2] letters[2,0] letters[0,3]
 ```
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ## Operations across axes
 
 <img src="./python-operations-across-axes.png"  class="plain" width="1000"/>
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Putting it all together
 
 [bit.ly/plot_example](http://bit.ly/plot_example)
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Programming good practice
 
@@ -418,7 +428,7 @@ Follow standard Python style
 	 `spam(ham[1], {eggs: 2})`   
 	 `spam( ham[ 1 ], { eggs: 2} )`
 - clear, meaningful variable names
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Programming good practice
 
@@ -430,7 +440,7 @@ def calc_bulk_density(mass,volume):
      return mass / volume
 ~~~
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Programming good practice
 
@@ -442,7 +452,7 @@ Document your code with docstrings
      assert volume > 0
      return mass / volume
 ```
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Programming good practice
 
@@ -450,7 +460,7 @@ Use version control - look out for the git Software Carpentry workshop
 
 <img src="./past-workshops.png"  class="plain" width="500"/>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Scientific good practice
 
@@ -460,7 +470,7 @@ Aim for reproducibility - example: [github.com/lucydot/effmass](https://github.c
 
 
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 ### Summary
 
@@ -477,7 +487,7 @@ Aim for reproducibility - example: [github.com/lucydot/effmass](https://github.c
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 <small>
 
 1. **running python code:** Jupyter Notebooks, markdown basics  
@@ -498,10 +508,64 @@ Aim for reproducibility - example: [github.com/lucydot/effmass](https://github.c
 
 </small>
 
-<!--s-->
+</script></section><section  data-markdown><script type="text/template">
 
 Well done!...keep going...
 
 
 ====*Thank-you*====
 
+</script></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {"transition":"none"};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+          Reveal.initialize(options);
+        </script>
+    </body>
+</html>
