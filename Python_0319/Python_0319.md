@@ -12,7 +12,7 @@ revealOptions:
 
 ## Software Carpentry
 
-### Python Part 1
+### Programming with Python
 
 </br>
 
@@ -73,7 +73,6 @@ Lucy Whalley
 
 ### Task
 
-
 Use your Jupyter notebook to...
 
 * link to the Imperial webpage
@@ -83,8 +82,6 @@ Use your Jupyter notebook to...
 [Green sticky when you're done please]
 
 <!--s-->
-
-### Variables
 
 <img src="./valuevariable.png"  class="plain" width="400"/>
 
@@ -302,6 +299,7 @@ def print_greeting():
 <!--s-->
 
 ### Functions
+
 ```
 def print_personalised_greeting(name):
 	print ("Hello "+name)
@@ -410,7 +408,7 @@ letters[2,1] letters[1,0] - letters[0,2] letters[2,0] letters[0,3]
 
 ### Programming good practice
 
-Follow standard Python style
+**Follow standard Python style**
 
 - focus on readability (consistency is key!)
 - maximum line length of 79 characters
@@ -422,7 +420,7 @@ Follow standard Python style
 
 ### Programming good practice
 
-Use assertions to check for errors
+**Use assertions to check for errors**
 
 ~~~python
 def calc_bulk_density(mass,volume):
@@ -434,7 +432,7 @@ def calc_bulk_density(mass,volume):
 
 ### Programming good practice
 
-Document your code with docstrings
+**Document your code with docstrings**
 
 ```
  def calc_bulk_density(mass,volume):
@@ -446,7 +444,7 @@ Document your code with docstrings
 
 ### Programming good practice
 
-Use version control - look out for the git Software Carpentry workshop
+**Use version control** - attend a git SWC
 
 <img src="./past-workshops.png"  class="plain" width="500"/>
 
@@ -454,7 +452,7 @@ Use version control - look out for the git Software Carpentry workshop
 
 ### Scientific good practice
 
-Aim for reproducibility - example: [github.com/lucydot/effmass](https://github.com/lucydot/effmass)
+**Aim for reproducibility** - example: [github.com/lucydot/effmass](https://github.com/lucydot/effmass)
 
 <img src="./effmass.png"  class="plain" width="600"/>
 
@@ -471,8 +469,8 @@ Aim for reproducibility - example: [github.com/lucydot/effmass](https://github.c
 3. **libraries**: modules, packages, libraries, import statements, aliases
 4. **cleaning data with pandas**: `pandas.read_csv`, DataFrames, `pandas.to_csv`
 5. **analysing data with numpy**: `numpy.loadtxt`, N-dimensional arrays, attributes
-6. **plotting data with matplotlib**: %matplotlib inline, `plot()`, `xlabel()`, `ylabel()`, `show()`, `savefig()`
-7. **running code as a Python script**: %%writefile filename.py, `python3 filename.py`
+6. **plotting data with matplotlib**: `%matplotlib inline`, `plot()`, `xlabel()`, `ylabel()`, `show()`, `savefig()`
+7. **running code as a Python script**: `%%writefile filename.py`, `python3 filename.py`
 8. **programming good practice**: Python style, `assert` statements, docstring
 
 </small>
@@ -492,8 +490,8 @@ Aim for reproducibility - example: [github.com/lucydot/effmass](https://github.c
 10. **libraries**: modules, packages, libraries, import statements, aliases
 11. **cleaning data with pandas**: `pandas.read_csv`, DataFrames, `pandas.to_csv`
 12. **analysing data with numpy**: `numpy.loadtxt`, N-dimensional arrays, attributes
-13. **plotting data with matplotlib**: %matplotlib inline, `plot()`, `xlabel()`, `ylabel()`, `show()`, `savefig()`
-14. **running code as a Python script**: %%writefile filename.py, `python3 filename.py`
+13. **plotting data with matplotlib**: `%matplotlib inline`, `plot()`, `xlabel()`, `ylabel()`, `show()`, `savefig()`
+14. **running code as a Python script**: `%%writefile filename.py`, `python3 filename.py`
 15. **programming good practice**: Python style, `assert` statements, docstring
 
 </small>
