@@ -9,6 +9,16 @@ You can re-use any of its content as long as the following attribution is includ
 
 ### Slide List
 
+
+<details>
+  <summary>Charge carrier transport in hybrid halide perovskites, March 2019</summary>
+
+[online slides](https://lucydot.github.io/slides/PGRD_0319)
+
+Slides for "elevator pitch" presentation of my PhD research, Materials Department post-graduate research day, Imperial College London, March 2019.
+
+</details>
+
 <details>
   <summary>Python Parts One and Two, March 2019</summary>
 
