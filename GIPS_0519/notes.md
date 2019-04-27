@@ -1,10 +1,9 @@
+
 # girls in physics series
 
 Take some pictures of the research group in action.
 
-Who am I?
-Lucy: Newcastle (photo from when I was young)
-Hackers --> Uni in Birmingham ---> trained as teacher (prisons, primary school) ---> study again at Imperial 
+
 
 # part one: my work as a computational materials scientist
 
@@ -34,14 +33,19 @@ Perhaps you are interested in science
 four parts: queen of the world, I have no idea what I'm doing, I'm tired, I'm excited (but never bored)
 places I've been
 
-what keeps me going?
-- questions I care about
-- reason I didn't continue
-- subjects you find interesting are good, but
-- its the people who make connections
-- you may not know until you are older
+
 
 - climate change. I think its the biggest question.
 - The March - great. radio show: I bet they'll go on a flight. They'll do it for other things.
 - not just scientists: everyone.
 - is there anything you care strongly about? how might your interests make a difference
+
+
+
+
+- The evening takes place at the Mills Centre, Highgate School, 5pm - 7pm.
+https://goo.gl/maps/3wtAqUyGZy82
+- The age group of the audience is 14-17 yo and the girls are all from Highgate School and from over 30 partner state-schools. The evening takes the structure of a talk by the first guest, followed by refreshments, and then a talk by the second guest. The talk should last 25 minutes, with 5-10 minutes for questions afterwards. It would be fabulous if you could tell us what your research is about and also how you got there (school, uni, PhD) and also about your past experience as primary school teacher! Any of your own personal advice on pursuing a career in Physics/engineering is much appreciated :).
+- Yes, there will be a projector for the slides. I'd kindly ask you to either bring your talk on a USB stick or to send your slides over so I can store them in the system. 
+- Send slides the day before
+

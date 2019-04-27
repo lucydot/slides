@@ -9,7 +9,7 @@ The second step is that we should be able to separate this electron and hole - i
 The third step, after charge separation, is that the electron and hole must be able to transport through the material and reach the electrode, where they can be extracted to an external circuit.
 This is the step that my research focuses on. And the material family of interest is the hybrid halide perovskites, which have caused great excitement over the last decade as they are able to complete this process efficiently but can be synthesised at relatively low cost.
 
-So we can ask which physical properties or processes could limit electron transport. And our answer could be split into two parts: those which are intrinsic to the material, and those which are extrinsic - those which we just have to live with, or those which could potentially be controlled for, could be engineered out.
+So we can ask which physical properties or processes c an limit electron transport. And our answer could be split into two parts: those which are intrinsic to the material, and those which are extrinsic - those which we just have to live with, or those which could potentially be controlled for, could be engineered out.
 
 One intrinsic limitation is the effective mass of the electron. Heavier electrons moving through the material will have a lower mobility - ideally we want a material with nice 'n' light electrons.
 My research has shown that at high electrons concentrations, the effective mass increases significantly due to a distortion of the electronic bandstructure.
