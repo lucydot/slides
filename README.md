@@ -9,6 +9,14 @@ You can re-use any of its content as long as the following attribution is includ
 
 ### Slide List
 
+<details>
+ <summary>Girls in Physics talk, April 2019</summary>
+
+[pdf slides](https://lucydot.github.io/slides/GIPS_0519/GiPs.pdf)
+
+Slides for Girls in Physics talk at Highgate School London, April 2019
+
+</details>
 
 <details>
   <summary>Charge carrier transport in hybrid halide perovskites, March 2019</summary>
