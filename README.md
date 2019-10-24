@@ -10,7 +10,7 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
-<summary>Oba group seminar, Tokyo</summary>
+<summary>Oba group seminar, October 2019</summary>
 
 [online slides](https://lucydot.github.io/slides/1910_Oba)
 
