@@ -190,7 +190,7 @@ Note: The initial excited state of system, for example, a positively charged don
 
 <!-- .slide: data-background="./background2.png" -->
 
-#### Promoting and Accepting modes
+#### 1D approximation
 <small>
 <img src="images/accept_promote.png"  class="plain" width="300"/>
 
@@ -199,7 +199,7 @@ From Stoneham *["Non-radiative transitions in semiconductors"](https://pdfs.sema
 	- *Accepting modes*: the modes which take up the electronic energy and ensure energy conservation. 
 	- *Promoting modes*: the modes which affect the electron-phonon matrix elements
 * The configuration coordinate $Q$ refers to the accepting modes
-* We can verify *a-posteriori* that $Q$ has strong promoting character (that electron-phonon coupling is significant for this distortion)
+* We can verify *a-posteriori* that $Q$ has strong promoting character (that electron-phonon coupling is significant for this distortion) and that the one-dimensional approximation is valid
 
 </small>
 
