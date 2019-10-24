@@ -278,6 +278,18 @@ Note: the very large lattice distortion. The process will be non-radiative as th
 
 <!-- .slide: data-background="./background2.png" -->
 
+#### H-centre in MAPI - C.C. diagram
+
+<small>
+<img src="./images/carrier_capture_diagram1.png"  class="plain" width="600"/>
+<img src="./images/MAPIdistort.png"  class="plain" width="600"/>
+
+
+
+<!--s-->
+
+<!-- .slide: data-background="./background2.png" -->
+
 #### H-centre in MAPI - anharmonicity 
 
 <small>
@@ -379,9 +391,9 @@ When an iodine interstitial is introduced the translational symmetry of the crys
 <small>
 <img src="./images/IPR.png"  class="plain" width="800"/>
 
-* IPR = "Inverse Participation Ratio"   
+* IPR = Inverse Participation Ratio   
 * The phonon mode with the largest contribution from the iodine dimer is a localised mode with an IPR = 21.4 and a frequency of 1.59 THz
-* This frequency is equal to the frequency of the negative interstitial PES (harmonic)
+* This frequency is equal to the frequency of the negative interstitial PES (harmonic) --> a normal phonon mode with strong accepting character
 
 
 </small>
