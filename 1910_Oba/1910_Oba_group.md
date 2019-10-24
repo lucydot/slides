@@ -97,21 +97,21 @@ Design and optimisation of energy materials using electronic structure theory, m
 
 3. `carriercapture.jl`: outline and case study
 
-4. Extension: normal phonon modes of defect systems
+4. Normal phonon modes of defect systems
 
 
 <!--s-->
 
 <!-- .slide: data-background="./background2.png" -->
 
-#### Non-radiative transitions
+#### Non-radiative processes
 
 <small>
 * Electronic energy --> carrier kinetic energy (Auger, high carrier densities)
 * Electronic energy --> vibrational energy (trap-assisted, low carrier densities)
 * Consequences for devices: e.g. V$_\textrm{oc}$ deficit in CZTS is attributed to short carrier lifetime ([reference](https://pubs.acs.org/doi/10.1021/acsaem.8b00194)).
 
-<img src="images/recombination.png"  class="plain" width="300"/>
+<img src="images/recombination.png"  class="plain" width="400"/>
 
 From [PhD thesis of Nico Tucher](http://publica.fraunhofer.de/eprints/urn_nbn_de_0011-n-4524396.pdf)
 
@@ -124,11 +124,13 @@ From [PhD thesis of Nico Tucher](http://publica.fraunhofer.de/eprints/urn_nbn_de
 #### Killer defects
 
 <small>
-* Defects with fast non-radiative transitions
-"Killer centres, those imperfections which cause rapid recombination even at low concentrations."
+> "Killer centres, those imperfections which cause rapid recombination even at low concentrations."
+
 --Marshall Stoneham, [*Non-radiative transitions in semiconductors*](https://iopscience.iop.org/article/10.1088/0034-4885/44/12/001)
-* See also Marshall Stoneham, "Defects and defect processes in nonmetallic solids"
-* Stoneham outlines several types of killer defects. Some are associated with capture to shallow defects with hydrogenic-like excited states. We are interested in capture to deep defects where multiple phonons are released in the process.
+* Defects with fast non-radiative transitions
+* There are two types of killer defects
+	* shallow defects with hydrogenic-like excited states 
+	* deep defects where multiple phonons are released during carrier capture
 
 </small>
 
@@ -137,17 +139,13 @@ From [PhD thesis of Nico Tucher](http://publica.fraunhofer.de/eprints/urn_nbn_de
 <!-- .slide: data-background="./background2.png" -->
 
 #### Configuration coordinate diagram
-
 <small>
-
-* Carrier capture into a localised electronic states
-* Accompanied by a lattice distortion (multiphonon emission) which can be represented by a single effective coordinate $Q$.
-* Configuration Coordainte diagrams plot $E$ against $Q$ and describe how the atoms in a lattice rearrange themselves when the charge state of the defect changes.
-
 <img src="images/config_coord.png"  class="plain" width="300"/>
 
-From MSci thesis of Puck van Gerwen
-<!-- .element: style="font-size: 0.6em" -->
+From MSci thesis of [Puck van Gerwen](https://uk.linkedin.com/in/puck-van-gerwen-9988509a)
+* Carrier capture into a localised electronic states
+* Accompanied by a lattice distortion which can be represented by a single effective coordinate $Q$.
+* Configuration Coordainte diagrams plot $E$ against $Q$ and describe how the atoms in a lattice rearrange themselves when the charge state of the defect changes.
 
 </small>
 
@@ -157,10 +155,10 @@ From MSci thesis of Puck van Gerwen
 
 #### Configuration coordinate diagram
 <small>
-
 <img src="images/carrier_capture.gif"  class="plain" width="400"/>
 
-From Kim et al. *["Lone-pair effect on carrier capture in Cu$_2$ZnSnS$_4$ solar cells"](http://dx.doi.org/10.1039/C8TA10130B)*
+*Lone-pair effect on carrier capture in Cu$_2$ZnSnS$_4$ solar cells*  
+Sunghyun Kim et al. [J. Mater. Chem. A (7) 2686](http://dx.doi.org/10.1039/C8TA10130B)
 
 
 </small>
@@ -180,7 +178,7 @@ Note: The initial excited state of system, for example, a positively charged don
 * Calculate the capture coefficient $C$ within a certain set of approximations:
 	* one-dimensional configuration coordinate $Q$ 
 	* static coupling theory for electron-phonon matrix elements $W_\textrm{if}$
-* Methodology introduced by [Audrius Alkaskas](https://scholar.google.com/citations?user=R9rJJwUAAAAJ&hl=en) who works in Vilnius, Lithuania
+* Methodology introduced by [Audrius Alkaskas](https://scholar.google.com/citations?user=R9rJJwUAAAAJ&hl=en)
 * Benchmarked using hole-capturing centres in GaN and ZnO
 
 <img src="images/carrier_capture_eqn.png"  class="plain" width="800"/>
@@ -193,18 +191,15 @@ Note: The initial excited state of system, for example, a positively charged don
 <!-- .slide: data-background="./background2.png" -->
 
 #### Promoting and Accepting modes
-
 <small>
+<img src="images/accept_promote.png"  class="plain" width="300"/>
+
+From Stoneham *["Non-radiative transitions in semiconductors"](https://pdfs.semanticscholar.org/0a30/ebcb3c77c99d4f8c835afc5b6611264e06c8.pdf)*
 * Lattice vibrations enter in two ways:
 	- *Accepting modes*: the modes which take up the electronic energy and ensure energy conservation. 
 	- *Promoting modes*: the modes which affect the electron-phonon matrix elements
 * The configuration coordinate $Q$ refers to the accepting modes
 * We can verify *a-posteriori* that $Q$ has strong promoting character (that electron-phonon coupling is significant for this distortion)
-
-<img src="images/accept_promote.png"  class="plain" width="300"/>
-
-From Stoneham *["Non-radiative transitions in semiconductors"](https://pdfs.semanticscholar.org/0a30/ebcb3c77c99d4f8c835afc5b6611264e06c8.pdf)*
-<!-- .element: style="font-size: 0.6em" -->
 
 </small>
 
@@ -231,11 +226,14 @@ From Stoneham *["Non-radiative transitions in semiconductors"](https://pdfs.sema
 
 <small>
 Calculation procedure:
-1. Generate 1D configuration coordinate diagram:  
+
+1. Generate 1D configuration coordinate diagram  
 *Calculate equilibrium geometries and total energies of defect supercells in initial and final charge states, then calculate the total energy at interpolated and extrapolated structures*
-2. Calculate the phonon overlap:  
+
+2. Calculate the phonon overlap  
 *Solve the 1D Schrodinger equation for each potential energy surface (PES) to obtain the phonon wavefunctions and calculate the wavefunction overlap between each PES*
-3. Calculate the electron-phonon coupling matrix element:  
+
+3. Calculate the electron-phonon coupling matrix element  
 *Calculate the band-edge and defect single particle electron wavefunctions at interpolated structures and calculate the change in wavefunction overlap as a function of $Q$.*
 
 </small>
@@ -302,10 +300,10 @@ Note: the intercept is now at about 0.5eV above the energy minima at equilibrium
 <img src="./images/ep.png"  class="plain" width="300"/>
 <img src="./images/eigs.png"  class="plain" width="600"/>
 
-* The atomic configuration of the neutral charge state provides a good starting point for perturbation theory
-* The electron phonon matrix element is 0.0036 eVamu$^{-0.5}$\cdot A$^{-1}$
-* Electron-phonon coupling in the strong coupling limit can be estimated using:
-* For this system $W_{if}\approx 0.0048 $eV\,amu$^{-\frac{1}{2}}$\cdot A$^{-1}$, suggesting that electron-phonon coupling for the collective mode $Q$ is strong --> the 1D configuration coordinate approach is valid.
+* The neutral charge state has a deep defect level for carrier capture
+* The electron phonon matrix element is 0.0036 eV amu$^{-0.5}$A$^{-1}$
+* Electron-phonon coupling in the strong coupling limit can be estimated using: $W_{if}\approx \frac{\Delta E}{\Delta Q}\sqrt{\frac{N_d}{N_b}}$ 
+* For this system $W_{if}\approx 0.0048$, suggesting that electron-phonon coupling for the collective mode $Q$ is strong --> the 1D configuration coordinate approach is valid.
 
 </small>
 
@@ -321,7 +319,7 @@ Note: the intercept is now at about 0.5eV above the energy minima at equilibrium
 <img src="./images/carrier_capture_rate.png"  class="plain" width="600"/>
 
 At room temperature the carrier capture coefficient is $1.2\times10^{-10}$cm$^3$s$^{-1}$
-(compare this to fast radiative carrier capture $\sim1.2\times10^{-13}$cm$^3$s$^{-1}$)
+(compare this to the rate given for fast radiative carrier capture $\sim1.2\times10^{-13}$cm$^3$s$^{-1}$)
 
 </small>
 
@@ -334,7 +332,7 @@ At room temperature the carrier capture coefficient is $1.2\times10^{-10}$cm$^3$
 <small>
 
 * For electron capture at a neutral defect, the carrier capture rate $R$ is given by $R = C_eN_t$ where $C_e$ is the electron capture coefficient and $N_t$ is the density of neutral traps.
-* In this study I did not calculate the trap density, but assuming a trap density of $1\times10^{16}$cm$^{-3}$ ([reference]()) gives a rate constant of $1.2\times10^{6}$cm$^3$s$^{-1}$, compared to an experimental rate constant of $2\times10^{7}$cm$^3$s$^{-1}$.
+* In this study I did not calculate the trap density, but assuming a trap density of $1\times10^{16}$cm$^{-3}$ ([reference](https://www.nature.com/articles/nmat3911?platform=oscar&draft=collection)) gives a rate constant of $1.2\times10^{6}$cm$^3$s$^{-1}$, compared to an experimental rate constant of $2\times10^{7}$cm$^3$s$^{-1}$ ([reference](https://onlinelibrary.wiley.com/doi/full/10.1002/adfm.201502340)).
 * For capture at a charged defect the coulombic attraction/repulsion must be accounted for. An effective mass approximation, the Sommerfield factor, can be used which requires the **effective mass** and **low-frequency dielectric constant**.
 
 </small>
@@ -344,7 +342,8 @@ At room temperature the carrier capture coefficient is $1.2\times10^{-10}$cm$^3$
 
 <!-- .slide: data-background="./background2.png" -->
 
-#### Normal phonon modes of a defect system
+#### Normal phonon modes 
+#### of a defect system
 
 <small>
 <img src="./images/defectmodes.png"  class="plain" width="400"/>
@@ -360,7 +359,8 @@ Note: The lattice modes are largely unaffected by the defect and are well approx
 
 <!-- .slide: data-background="./background2.png" -->
 
-#### Normal phonon modes of the iodine interstital 
+#### Normal phonon modes of the 
+#### iodine interstital 
 
 <small>
 <img src="./images/interstitialphonons.png"  class="plain" width="800"/>
@@ -373,13 +373,15 @@ When an iodine interstitial is introduced the translational symmetry of the crys
 
 <!-- .slide: data-background="./background2.png" -->
 
-#### Inverse Participation Ratio of the iodine interstitial
+#### IPR of the iodine interstitial
 
 
 <small>
 <img src="./images/IPR.png"  class="plain" width="800"/>
 
-The phonon mode with the largest contribution from the iodine dimer is a localised mode with an IPR = 21.4 and a frequency of 1.59 THz
+* IPR = "Inverse Participation Ratio"   
+* The phonon mode with the largest contribution from the iodine dimer is a localised mode with an IPR = 21.4 and a frequency of 1.59 THz
+* This frequency is equal to the frequency of the negative interstitial PES (harmonic)
 
 
 </small>
@@ -407,7 +409,6 @@ The phonon mode with the largest contribution from the iodine dimer is a localis
 <!-- .slide: data-background="./background2.png" -->
 
 <img src="./images/thankyou.png"  class="plain" width="1200"/>
-+ Puck van Gerwen (MSci student)
 
 Presentation slides: [lucydot.github.io/slides](https://lucydot.github.io/slides/)  
 Presentation made using [reveal-md](https://github.com/webpro/reveal-md)
@@ -416,7 +417,6 @@ Presentation made using [reveal-md](https://github.com/webpro/reveal-md)
 
 <!-- .slide: data-background="./background2.png" -->
 
-# EXTRAS
 
 
 <!--v-->
@@ -467,7 +467,7 @@ L. D. Whalley | JOSS (2018) | [doi:10.21105/joss.00797](https://doi.org/10.21105
 <img src="./images/optical_mass.png"  class="plain" height="480"/>
 
 *Impact of non-parabolic electronic band structure on the properties of PV materials*   
-L. D. Whalley et al. | In Review | [arXiv:1811.02281v2](https://arxiv.org/pdf/1811.02281.pdf)
+L. D. Whalley et al. | PRB (2019) | [doi:10.1103/PhysRevB.99.085207](https://doi.org/10.1103/PhysRevB.99.085207)
 
 </small>
 <!--v-->
@@ -480,29 +480,6 @@ L. D. Whalley et al. | In Review | [arXiv:1811.02281v2](https://arxiv.org/pdf/18
 
 Polaron mobility code available at [github.com/jarvist/PolaronMobility.jl](https://github.com/jarvist/PolaronMobility.jl)
 
-</small>
-
-<!--v-->
-
-<!-- .slide: data-background="./background2.png" -->
-
-#### MAPI lattice anharmonicity
-
-<center>
-<video autoplay="true" loop="true" muted="true" width="800" align="center">
-    <source src="./images/tilting_animation.mp4" type="video/mp4" />
-</video>
-</center>
-
-
-<!--v-->
-<!-- .slide: data-background="./background2.png" -->
-
-#### MAPI lattice anharmonicity
-<img src="./images/ModeMap.png"  class="plain" width="800"/>
-
-<small>
-Mode-mapping code available at [github.com/JMSkelton/ModeMap](https://github.com/JMSkelton/ModeMap)
 </small>
 
 <!--v-->
