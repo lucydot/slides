@@ -10,6 +10,15 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
+<summary>Oba group seminar, Tokyo</summary>
+
+[online slides](https://lucydot.github.io/slides/1910_Oba)
+
+Slides for a seminar at the Tokyo Institute of Technology (Oba group) - "Carrier capture via multiphonon emission", October 2019.
+
+</details>
+
+<details>
  <summary>Girls in Physics talk, April 2019</summary>
 
 [pdf slides](https://lucydot.github.io/slides/GIPS_0519/GiPs.pdf)
