@@ -12,7 +12,8 @@ You can re-use any of its content as long as the following attribution is includ
 <details>
   <summary>Version control with git, November 2019</summary>
 
-[pdf slides](https://lucydot.github.io/slides/1911_git/SWC_git_1911.pdf)
+[pdf slides](https://lucydot.github.io/slides/1911_git/SWC_git_1911.pdf)  
+[A-board sketches](https://lucydot.github.io/slides/1911_git/A-board-sketches.jpg)
 
 Slides for the software carpentry workshop "version control with git", taught at Imperial College London in November 2019. The course webpage is [here](https://kmichali.github.io/2019-11-14-Imperial/).
 
