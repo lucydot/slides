@@ -1,4 +1,4 @@
-A collection of my presentation slides, generated using [reveal-md](https://github.com/webpro/reveal-md).    
+A collection of my presentation slides, many of which are generated using [reveal-md](https://github.com/webpro/reveal-md).    
 If you're looking for my homepage, it is [here](https://lucydot.github.io) <img src="./world.png" width="20" height="20">
 <details>
   <summary> Click here for website licensing information </summary>
@@ -9,6 +9,33 @@ You can re-use any of its content as long as the following attribution is includ
 
 ### Slide List
 
+<details>
+  <summary>Version control with git, November 2019</summary>
+
+[pdf slides](https://lucydot.github.io/slides/1911_git/SWC_git_1911.pdf)  
+[A-board sketches](https://lucydot.github.io/slides/1911_git/A-board-sketches.jpg)
+
+Slides for the software carpentry workshop "version control with git", taught at Imperial College London in November 2019. The course webpage is [here](https://kmichali.github.io/2019-11-14-Imperial/).
+
+</details>
+
+<details>
+<summary>Oba group seminar, October 2019</summary>
+
+[online slides](https://lucydot.github.io/slides/1910_Oba)
+
+Slides for a seminar at the Tokyo Institute of Technology (Oba group) - "Carrier capture via multiphonon emission", October 2019.
+
+</details>
+
+<details>
+ <summary>Girls in Physics talk, April 2019</summary>
+
+[pdf slides](https://lucydot.github.io/slides/GIPS_0519/GiPs.pdf)
+
+Slides for Girls in Physics talk at Highgate School London, April 2019
+
+</details>
 
 <details>
   <summary>Charge carrier transport in hybrid halide perovskites, March 2019</summary>
