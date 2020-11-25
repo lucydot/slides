@@ -10,6 +10,15 @@ You can re-use any of its content as long as the following attribution is includ
 ### Slide List
 
 <details>
+  <summary>CDT-ReNU Programming with Python, November 2020</summary>
+
+[online slides](https://lucydot.github.io/slides/1911_git/SWC_git_1911.pdf)  
+
+Slides for the adapted software carpentry workshop "Programming with Python", taught online for the Centre for Doctoral Training Renewable Energies North-East Universities. The course webpage is [here](https://lucydot.github.io/python_novice/).
+
+</details>
+
+<details>
   <summary>Version control with git, November 2019</summary>
 
 [pdf slides](https://lucydot.github.io/slides/1911_git/SWC_git_1911.pdf)  
