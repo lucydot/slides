@@ -12,7 +12,7 @@ You can re-use any of its content as long as the following attribution is includ
 <details>
   <summary>CDT-ReNU Programming with Python, November 2020</summary>
 
-[online slides](https://lucydot.github.io/slides/Python_2011/Python_2011.html)  
+[online slides](https://lucydot.github.io/slides/Python_2011)  
 
 Slides for the adapted software carpentry workshop "Programming with Python", taught online for the Centre for Doctoral Training Renewable Energies North-East Universities. The course webpage is [here](https://lucydot.github.io/python_novice/).
 
