@@ -823,12 +823,13 @@ print('temperature after call:', temperature)
 - I mentioned at the start of the course that Python is a popular course, so that there are a lot of Python code already written and available online.
 - These are collected together into Python packages. These are some of the most popular scientific python packages. So for example, you are doing astrophysics, you can download the astropy package and this will contain lots of functions - pieces of code - useful to your work.
 - Related Functions are collected together in a file called a module.
-- A module can also contain data values (numerical constants for example)
+- A module can also contain data values (numerical constants for example).
+- Modules correspond to a single file.
 - Related Modules are collected together in a package
 - Related packages and modules are collected together in a library
 - Package and Library are often used interchangeably; in Python a library is not strictly defined.
 - python standard library comes with python itself
-- additional libraries are available via the python package index
+- additional libraries are available via the python package index (show python package index)
 - we use import to add a library or module into a program's memory
 - lets import the math module which is in the Python standard library
 
@@ -895,9 +896,12 @@ break
 
 ```
 
-### Cleaning data with Pandas
+### Reading and cleaning data with Pandas
 
 - We are now going to work with the UV-Vis data until the end of the session.
+- It should be downloaded/moved to your desktop
+- Start a new notebok with the name "UV-Vis_example"
+- Thumbs up when you are done
 - First we need to read it in. There are a couple of libraries which could do this for us. We will use the `pandas` library which is a popular library for data analysis.
 
 ~~~python
@@ -907,7 +911,7 @@ import pandas
 - Now that we have imported it we can call the `read_csv` function in the library
 
 ~~~python
-pandas.read_csv("./data/UVVis-01.csv")
+pandas.read_csv("./desktop/UVVis-01.csv")
 ~~~
 
 - Remember that it is important to put `pandas.` before read_csv
@@ -922,15 +926,23 @@ We are going to analyse the data, but first we need to clear up this dataframe. 
 - we can do the first two things with the following command
 
 ~~~python
-pandas.read_csv("./data/UVVis-01.csv",usecols=[1,3,5,7,9,11,13,15,17,19],header=None)
+pandas.read_csv("./Desktop/UVVis-01.csv",usecols=[1,3,5,7,9,11,13,15,17,19],header=None)
 ~~~
 
 - We've passed two additional arguments to pandas: The usecols keyword which specifies the columns to read in and the header keyword which, when we set to False, tells the read_csv function that there is no heading data in the file and that the headers should be set to an integer range.
 
+- Ugh, the usecols list explicitly typed out is ugly. Is there a nicer way of writing this list?
+
+~~~python
+columns_tokeep = [0]+list(range(1,21,2))
+~~~
+
+- I've done two things here. Included a step in the range function, and converted from iterable to a list. Then added them together.
+
 - Our call to pandas.read_csv read our file but didn’t save the data in memory. To do that, we need to assign the array to a variable. Just as we can assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run `pandas.read_csv` and save the returned data:
 
 ~~~python
-data = pandas.read_csv("./data/UVVis-01.csv",usecols=[1,3,5,7,9,11,13,15,17,19],header=None)
+data = pandas.read_csv("./Desktop/UVVis-01.csv",usecols=columns_tokeep,header=None)
 ~~~
 
 - This statement doesn’t produce any output because we’ve assigned the output to the variable data. If we want to check that the data have been loaded, we can print the variable’s value:
@@ -939,13 +951,22 @@ data = pandas.read_csv("./data/UVVis-01.csv",usecols=[1,3,5,7,9,11,13,15,17,19],
 print(data)
 ~~~
 
-- Now that the data are in memory, we can manipulate them. First, let’s ask what type of thing data refers to:
+- We can have a look and inspect this data type 
 
 ~~~python
-print(type(data))
+type(data)
 ~~~
 
 - The output tells us that data currently refers to an pandas DataFrame.
+- what is a pandas dataframe? It is a 2D data structure. It can hold heterogeneous data (in each column the datatype is the same, but across columns it can be different). It can handle missing values - NaNs nicely. The axes are labelled. The rows are given index labels. And the columns are given column names. 
+- We can see that it's in this frame module. We can have a look at the docstring for dataframe, or for the frame module
+
+
+~~~python
+pandas.core.frame.DataFrame?
+~~~ 
+
+- Now that the data are in memory, we can manipulate them. 
 
 - We can now use the transpose method to swap the rows and columns of data, and assign this to the variable data.
 
@@ -953,115 +974,115 @@ print(type(data))
 data = data.transpose()
 print(data)
 ~~~
- 
+
+- Now it makes sense to set this first row as our header. To do this we need to know how to access the first row. We do this with the `loc` (location) command. This selects the row with the label 0.
+
+~~~python
+new_header = data.loc[0]
+new_header
+~~~
+
+- We then take the dataframe but without the header row. We do this by slicing. We can slice a numpy dataframe. This slices the rows. The empty after colon means slice to the end.
+
+~~~python
+data = data.loc[1:]
+~~~
+
+- So this is our dataframe without the first row. Now we need to add our new header to this
+
+~~~python
+data.columns = new_header
+~~~
+
+- Now our data set is nice and clean and ready to analyse.
 - The final thing left to do is print our cleaned dataset to a file for analysing later. 
-- To do this we can use the `to_csv` DataFrame method. We set the header and index parameters to False as we do not want to print these to the file.
+- To do this we can use the `to_csv` DataFrame method. We set the header to True, but the index parameters to False.
 
 ~~~python
-data.to_csv('./data/UVVis-01-cleaned.csv', header=False, index=False)
+data.to_csv('./Desktop/UVVis-01-cleaned.csv', header=True, index=False)
 ~~~
 
-- So we've now saved a file containing a cleaned version of our UV-Vis data.
+- So we've now saved a file containing a cleaned version of our UV-Vis data. If we'd finished work for the day we could save it and look at it later. Note that this is much better than deleting columns or rows by hand in an excel or similar. You have a copy of the raw data and a copy of the notebook used to manipulate it, so you can go back and see exactly what you've done. You have a record of your steps. 
 
-### Analysing data with NumPy
+### Analysing data with Pandas
 
-- In order to load our UV-Vis data, we need to access (import in Python terminology) a library called NumPy. In general you should use this library if you want to do fancy things with numbers, especially if you have matrices or arrays.
+- Let's read in the data we saved. Remember columns are wavelengths, rows are individual samples.
 
 ~~~python
-import numpy
-numpy.loadtxt(fname='./data/UVVis-01-cleaned.csv', delimiter=',')
+data = pandas.read_csv("./Desktop/UVVis-01-cleaned.csv")
 ~~~
 
-- We read in the data using the function `loadtxt` which is in the `numpy` library.
-
-- `numpy.loadtxt` has two parameters: the name of the file we want to read and the delimiter that separates values on a line. These both need to be character strings (or strings for short), so we put them in quotes.
-
-- Let's re-run `numpy.loadtxt` and save the returned data
+- So we have seen how to slice the rows. We do that with
 
 ~~~python
-data = numpy.loadtxt(fname='./data/UVVis-01-cleaned.csv', delimiter=',')
+data.loc[3:8]
 ~~~
 
-- Remember, this statement doesn’t produce any output because we’ve assigned the output to the variable data. If we want to check that the data have been loaded, we can print the variable’s value:
+- This selects the third to 8th row **inclusive**. We can also slice rows and columns. We do this with
 
 ~~~python
-print(data)
+data.loc[3:8,'1500.0':'1492.0']
 ~~~
 
-- We have a 2D array of values. The rows are the individual samples, and the columns are the absorption at each wavelength.
-- We can ask what type of object does data refer to
+- The rows we slice first, then a comma, then the columns we want to slice. The column headers are strings, that is why they have to be in quotes. 
+
+- This could get annoying so we can use the map method to map them all to floats.
 
 ~~~python
-print(type(data))
+data.columns.map(float)
+data.columns = data.columns.map(float)
 ~~~
 
-- The output tells us that data currently refers to an N-dimensional array, and this array, and the funcionality for this array, is defined in the numpy library. 
-
-- *on board* A numpy array is different to a dataframe as it contains elements of the same type. In this case it contains floats.
-
-- A numpy array has an attribute called shape
+In fact, they are all integers so map them to integers
 
 ~~~python
-print(data.shape)
+data.columns.map(int)
+data.columns = data.columns.map(int)
 ~~~
 
-- The output tells us that the data array variable contains 10 rows and 1301 columns.
-
-- When we created the variable data to store our absorption data, we didn’t just create the array; we also created information about the array, called  attributes. 
-
-- data.shape is an attribute of data which describes the dimensions of data. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.
-
-- If we want to get a single number from the array, we must provide an index in square brackets after the variable name, just like with python lists.
-
-- Our absorption data has two dimensions, so we will need to use two indices to refer to one specific value:
+- Now we can slice with integers
 
 ~~~python
-print('first value in data:', data[0, 0])
+data.loc[3:8,1500:1492]
 ~~~
 
-- 3 things:
-	- indexing starts from 0! 
-	- the first value corresponds to the upper left corner of our array
-	- Python is row major, which means that the first index tells you the row and the second index tells you the column.
+- They key thing here is that we index or slice the rows first (before the comma), then the columns (after the comma). 
+
+- Task: Crack the code!
+
+- We can also perform common mathematical operations across all values in a column or row. Perhaps you find out the machine wasn't calibrated correctly and you need to add 0.007 to all values. This is easy
 
 ~~~python
-print('first value in data:', data[5, 600])
+data = data + 0.007
+data += 0.007
 ~~~
 
-- if we start our counting from 1, this will be in the sixth row, and the 601st column.
-
-*question: crack the code*
-
-letters = np.array([[g,y,c,t],[v,o,x,e],[d,p,i,n]])
-
-letters[2,1] letters[1,0] - letters[0,2] letters[2,0] letters[0,3]
-
-- we can also slice an array, like slicing a list
+- To add 0.0004 to the values of a given row we do 
 
 ~~~python
-print(data[0:4, 0:10])
+data.loc[7] = data.loc[7]+0.0004
+data.loc[7] += 0.0004
 ~~~
 
-- This slices the first four rows and the first 10 columns.
-
-- Arrays also know how to perform common mathematical operations on their values. When you do such operations on arrays, the operation is done element by element
+- To add 0.0004 to the values of a given column we do 
 
 ~~~python
-doubledata = data*2.0
-
-print('original:')
-print(data[:3,:3])
-print('doubledata:')
-print(doubledata[:3,:3])
+data.loc[:,1495] = data.loc[:,1495]+0.0004
+data.loc[:,1495] += 0.0004
 ~~~
 
-- NumPy can also do more complex operations like calculating the mean of the whole array
+- Pandas can also do more complex operations like calculating the mean across the rows
 
 ~~~python
-print(numpy.mean(data))
+print(data.mean(axis=0))
 ~~~
 
--`mean` is a function which takes an array as an argument
+-data is a dataframe type. Dataframe types have the `mean` method. Specifying axis=0, the zeroth axis is rows so its saying calculate the mean over the rows. I could do the mean over the columns
+
+~~~python
+print(data.mean(axis=1))
+~~~
+
 
 - We can also calculate the maximum and minimum values in the array
 
@@ -1070,32 +1091,32 @@ print(numpy.max(data))
 print(numpy.min(data))
 ~~~
 
-- To see all the numpy functions we type `numpy.` then press tab
+- To see all the dataframe methods we type `data.` then press tab
 
 - For this data it is more likely that we'd want to calculate something like the maximum absorption per sample. One way to do this is to create a new temporary array of the data we want 
 
 ~~~python
-sample_0 = data[0,:] # this selects the first row (first sample)
+sample_0 = data.loc[0] # this selects the first row (first sample)
 sample_0.max() # maximum of the first sample
 ~~~
 
 - If we wanted to calculate the maximum absorption per sample for every sample, not just for the fist sample, we can use
 
 ~~~python
-print(numpy.max(data,axis=0))
+print(data.max(axis=1))
 ~~~
 
-- `axis=0` tells numpy to find the maximum of the first axis, over the rows.
+- `axis=1` tells numpy to find the maximum of the axis 1, which is the columns.
 
-*Question: what command would be use to calculate the average absorption at each wavelength?
+*Question: what command would be use to calculate the minimum absorption at each wavelength?
 
 ~~~python
-print(numpy.mean(data,axis=1))
+print(data.min(axis=0))
 ~~~
 
 ### Visualizing data with matplotlib
 
-- There is no official python plotting library, but matplotlib is by far the most widel used. It's great! You can make a range of beautiful plots (show examples and link to online gallery)
+- There is no official python plotting library, but matplotlib is by far the most widely used. It's great! You can make a range of beautiful plots (show examples and link to online gallery)
 
 - Let's import the library
 
@@ -1108,109 +1129,91 @@ import matplotlib.pyplot
 - It's now straightforward to plot the average absorption data across all wavelengths
 
 ~~~python
-ave_absorption = numpy.mean(data,axis=0)
+ave_absorption = data.mean(axis=0)
+ave_absorption  # this contains wavelengths and average absorption
+~~~
+
+~~~python
 ave_plot = matplotlib.pyplot.plot(ave_absorption)
 matplotlib.pyplot.show()
 ~~~
 
-- At the moment the x-axis has no physical significance; it is an integer range from 0 to 1200. 
-
-- It would be better if the x-axis corresponded to the wavelength. Let’s read in the wavelength from the original (un-cleaned) data file.
-
-- We read in the first column of the data file as this contains the wavelength data.
+- We can add labels to the axes
 
 ~~~python
-wavelengths_df = pandas.read_csv("./data/UVVis-01.csv",usecols=[0],header=None)
-~~~
-
-- This creates a dataframe object. We can convert this to a numpy array with the `to_numpy` method
-
-~~~python
-wavelengths = wavelengths_df.to_numpy()
-~~~
-
-- And now we can plot average absorption vs wavelength
-
-~~~python
-ave_plot = matplotlib.pyplot.plot(wavelengths,ave_absorption)
+ave_plot = matplotlib.pyplot.plot(ave_absorption)
 matplotlib.pyplot.xlabel("wavelength")
 matplotlib.pyplot.ylabel("ave. absorption")
 matplotlib.pyplot.show()
 ~~~
 
-- We are interested in analysing a sub-set of the data, from index 650 to index 800. So let’s take a slice of the wavelength and data arrays.
+- We are interested in analysing a sub-set of the data, from wavelengths 300 to 1000.
 
 ~~~python
-data_slice = data[:,650:800]
-wavelength_slice = wavelengths[650:800]
-~~~
-
-- And now lets plot the sub-set of the absorption data
-
-~~~python
-max_plot = matplotlib.pyplot.plot(wavelength_slice,numpy.mean(data_slice, axis=0))
+ave_plot = matplotlib.pyplot.plot(ave_absorption.loc[1000:300])
 matplotlib.pyplot.xlabel("wavelength")
 matplotlib.pyplot.ylabel("ave. absorption")
 matplotlib.pyplot.show()
 ~~~
+
+- Note the order - remember these are not indices, but column headings
 
 - It's easy to copy this code and adapt to calculate two other statistics.
 
-
 ~~~python
-max_plot = matplotlib.pyplot.plot(wavelength_slice,numpy.max(data_slice, axis=0))
+
+max_absorption = data.max(axis=0)
+min_absorption = data.min(axis=0)
+
+ave_plot = matplotlib.pyplot.plot(max_absorption)
 matplotlib.pyplot.xlabel("wavelength")
-matplotlib.pyplot.ylabel("max absorption")
+matplotlib.pyplot.ylabel("max. absorption")
 matplotlib.pyplot.show()
+
 ~~~
 
 ~~~python
-max_plot = matplotlib.pyplot.plot(wavelength_slice,numpy.min(data_slice, axis=0))
+ave_plot = matplotlib.pyplot.plot(min_absorption)
 matplotlib.pyplot.xlabel("wavelength")
-matplotlib.pyplot.ylabel("min absorption")
+matplotlib.pyplot.ylabel("min. absorption")
 matplotlib.pyplot.show()
 ~~~
 
 - If I want to save this plot, I use the `savefig` method
 
-
 ~~~python
-max_plot = matplotlib.pyplot.plot(wavelength_slice,numpy.min(data_slice, axis=0))
+ave_plot = matplotlib.pyplot.plot(min_absorption)
 matplotlib.pyplot.xlabel("wavelength")
-matplotlib.pyplot.ylabel("min absorption")
+matplotlib.pyplot.ylabel("min. absorption")
 matplotlib.pyplot.savefig("./min_absorption_plot.png")
-matplotlib.pyplot.show()
 ~~~
-
-- This block of code brings all of our plotting examples together in one place. It allows us to group plots together in one figure. We don't have time to go through this example fully but I'll briefly explain
-	- we load the absorption data, and wavelength data
-	- we take a slice of that data
-	- we then - and this is what you haven't seen before - we create  a figure. Creates a space into which we place all our plots. Subplots are added to the figure. 1 row of subplots, 3 columns of subplots, and axes1 corresponds to the first subplot.
-	- we set the ylabel or axes1 etc...
-	- and save the fig.
-- You can go to lucydot.github.io/slide/0319_python/code_example.slides.html (convert to bit.ly) and copy and paste the code
 
 ### Running your Code as a Python Script
 
-- In the previous lesson we wrote a script for plotting the average, maximum and mean of the absorption. 
 - If you wanted to share this script with other researchers you may want to export this code cell as a plain text file. 
 - It can then be run from a terminal rather than opening up Jupyter Notebooks. 
 - This might be useful if you are trying to automate your workflow
 
-- To convert the code in your Jupyter Notebook cell into a plain text .py file there are two options:
-
-- Option one:
-	- copy the code cell
-	- open a text editor
-	- paste the code into your text editor
-	- save with a .py extension
-- Option two:
-	- Use the Jupyter Magic command %%writefile myfile.py in your code block
-
-- Let's use option two
+- To convert the code in your Jupyter Notebook cell into a plain text .py file we can Use the Jupyter Magic command %%writefile myfile.py in your code block. first of all we need to include all the code in a single cell. and then we need to add the writefile command
 
 ~~~python
-%%writefile absorption_plots.py
+
+%%writefile absorption_plot.py
+
+import numpy
+import pandas
+import matplotlib.pyplot
+
+data = pandas.read_csv("./desktop/UVVis-01-cleaned.csv")
+data.columns = data.columns.map(float).map(int)
+
+min_absorption = data.min(axis=0)
+min_plot = matplotlib.pyplot.plot(min_absorption)
+matplotlib.pyplot.xlabel("wavelength")
+matplotlib.pyplot.ylabel("min. absorption")
+matplotlib.pyplot.savefig("./min_absorption_plot.png")
+
+
 ~~~
 
 - This will create a file with the name absorption_plots.py
@@ -1230,20 +1233,32 @@ python3 absorption_plots.py
 - We can adapt the absorption_plots.py script as follows:
 
 ~~~python
+%%writefile absorption_plot.py
+
 import sys
 import numpy
 import pandas
 import matplotlib.pyplot
 
-data = numpy.loadtxt(fname=sys.argv[1], delimiter=',')
-wavelengths = pandas.read_csv(sys.argv[2],usecols=[0],header=None).to_numpy()
+data = pandas.read_csv(sys.argv[1])
+data.columns = data.columns.map(float).map(int)
+
+min_absorption = data.min(axis=0)
+min_plot = matplotlib.pyplot.plot(min_absorption)
+matplotlib.pyplot.xlabel("wavelength")
+matplotlib.pyplot.ylabel("min. absorption")
+matplotlib.pyplot.savefig("./min_absorption_plot.png")
+
+
 ~~~
 
-- In this example `sys.argv[1]` should correspond to the cleaned data file, and `sys.argv[2]` should correspond to the original data file.
+- In this example `sys.argv[1]` should correspond to the cleaned data file
 
 ~~~bash
-python3 absorption_plots.py ./data/UVVis-01-cleaned.csv ./data/UVVis-01.csv
+python3 absorption_plots.py ./Desktop/UVVis-01-cleaned.csv 
 ~~~
+
+- We've done the very basics, but you can do so much with matplotlib (see gallery).
 
 ### Programming Good Practice
 

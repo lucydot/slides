@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># Teaching <aside class="notes"><p>Python Part One</p>
+<h2 id="to-remember">To remember</h2>
+<ul>
+<li>think about internet</li>
+<li>Change Keyboard! or use headphone/microphone</li>
+<li>check with Cai - questions, monitoring, note taking..have an instructor to instructor chat.</li>
+<li>ASK FOR FEEDBACK at end</li>
+<li>check Binder running ok</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<ul>
+<li>Teams for the call</li>
+<li>etherpad for notes, questions, links</li>
+<li>directpoll for polling: <a href="https://www.directpoll.com/c?XDVhEt2FQnm1qDVqy6t8Hp1pNW2T1N#opt0">https://www.directpoll.com/c?XDVhEt2FQnm1qDVqy6t8Hp1pNW2T1N#opt0</a> is the admin page (have it ready)</li>
+<li>forms for post-workshop quiz</li>
+<li>jitsi for break out</li>
+<li><p>online notebook for people have problems running locally: </p>
+</li>
+<li><p>so student will have: Me on Teams, their notebook webpage on as standard. Then the etherpad for notes, and the quiz webpage for the quiz.</p>
+</li>
+</ul>
+<h2 id="intro-outline">Intro &amp; Outline</h2>
+<ul>
+<li>Paste link to: etherpad, quiz, website and slides.</li>
+<li>Hi! I&#39;m Lucy</li>
+<li>In this workshop we are going to...</li>
+</ul>
+<h2 id="motivation">Motivation</h2>
+<p>Why not excel? It is easy to make mistakes using excel. JP Morgan - error on excel spreadsheet led to the loss of 4.6billion pounds. The problem with excel is that you cannot test an excel document. And you can overtype numbers by mistake. And people make mistakes.</p>
+<p>The second is that by taking a programmatic approach to data analysis and plotting you are ensuring the reproudcibility of your science. If you write code to analyse data, and crucially if you share that code, you are ensuring that your analysis can be easily reproduced by other scientists. They can verify your work. As an example, take a paper I published with a colleague a few years ago. So we did the research, published our method and results in a paper, and alongside this we gathered our raw data and the scripts we used to analyse that data into an online repository, which we also published. The vast majority of standalone journal papers do not include enough details for you to reproduce the work. So supplementing eacn one with analysis scripts is a relatively straight forward way to increase the reproducbnility of your work.</p>
+<p>The third reason is repeatability. This is about efficiency. Once you have a script working for one set of data, you can take the data from your next experimental run and process it with the same script at no additional time cost. You can share it with colleagues. </p>
+<p>Now I&#39;ve been talking about why a general programmatic approach is important. But why Python in particular?</p>
+<p>First of all, Python gives you wings. You can do a lot with a little bit of code. That is because, unlike a language like C or C++, you can easily import code that other people have written and use that in your programmes. For instance, if I want to do a weighted least squares fit of a 5th order polynomial to a set of data, I can do this in a single line of code. </p>
+<p>Second, when it comes to plotting, Python is capable of producing beautiful publication ready plots. For my papers, I always use Python - it looks professional, and there is a flexible plotting libary called matplotlib. And because I write scripts for each plot, if I want to re-plot a new set of data I can do this in a single command.</p>
+<p>So I&#39;ll start by emphasising that every programming language makes a trade off. So all languages balance how long it takes to write a programe, human time, against how long it takes that program to run, machine time. For example, a programme written in the programming language C will run faster than Python.
+For the type of calculations and analysis I do, all my programmes run in seconds - so it doens&#39;t matter to me if Python takes longer - what matters to me is I can write the programmes quickly - which is one of the reasons I use Python.</p>
+<p>Here are some other reasons to use Python:</p>
+<pre><code>- It is readable, and so its easier to learn than some other languages.
+- It is free to use
+- It is cross-platform - can work on Mac, Windows, linux
+- It is widely used - scientific programming, data science, machine learning, cybersecurity. Indeed.com and stack overflow - top for job listings and for average salary on offer.
+- It is well documented. The last two are linked. Because there are a lot of people using it, there is a lot of information about Python online, lots of tutorials and lots of discussion forums with questions and answers. It&#39;s very rare that I&#39;m stuck on something and can&#39;t find the answer online. Because it&#39;s a popular language, there are a lot of python programmes and scripts available online. 
+</code></pre><h2 id="outline">Outline</h2>
+<p>So here is the outline for this morning</p>
+<pre><code>
+- writing and running python code
+- variables 
+- data types
+- functions, help and errors
+
+ break (30 mins)
+
+- lists
+- for loops
+- conditionals
+
+finish @ 1pm
+</code></pre><p>Half an hour break in the middle.
+The overall aim of this course is to teach the basics of programming, with some examples using Python. What you learn here will be applicable to other languages. </p>
+<p><em>Can I re-explain or clarify anything for you? </em></p>
+<h2 id="writing-and-running-python-code">Writing and running Python code</h2>
+<p>There are few different approaches you can use to write and run python code. The plain text approach is where we use a text editor to write a programme. We save that programme with a .py extension to let the OS and us know that it is a python programme. We go to our terminal, and we run the programme. </p>
+<p>The second approach is to use a Jupyter notebook. We write and run the code in the notebook environment. Everything is done in a single place.
+We save as a .ipynb. This is what we will use to write and run our python code.
+Open your terminal / git bash and type</p>
+<pre><code>jupyter notebook 
+</code></pre><p>This should open a default web browser and open a server (don&#39;t close) - this is where all the work is happening.
+It is running locally on your machine: so although it opens a browser, it is not using the internet.
+This is the landing page, which you should all see on your computers.</p>
+<p><em>If you have problems, please raise your hand</em></p>
+<h2 id="setup">Setup</h2>
+<ul>
+<li>Arrange your screen so you can see my screen and your Jupyter Notebook at the same time</li>
+<li>At some points during the training you will also need to access:<ul>
+<li>etherpad: add your name to the etherpad (at the top and in the doc)</li>
+</ul>
+</li>
+</ul>
+<p>If you&#39;ve got a question or comment raise your hand. Cai will be monitoring the chat. Cai, if there are several people and we need to pause then let me know.
+Use the emojis to give me feedback! especially thumbs up
+Stay on mute unless your speaking. Let me know if I&#39;ve forgotten to unmute etc.</p>
+<ul>
+<li>set students up with jitsi (even numbers create a jitsi, and give this link to the odd number before them)</li>
+</ul>
+<h2 id="writing-and-running-python-code-ctd-">Writing and running Python code (ctd)</h2>
+<ul>
+<li>Click on new notebook and select Python 3 - few different versions, this is the latest one and the one we will use.  </li>
+<li>We can rename the notebook &quot;Python_Workshop&quot;  </li>
+<li>We can enter code into a code cell: 2+3  </li>
+<li>You can see it&#39;s a code cell because it says Python here.  </li>
+<li>And we can run the cell  </li>
+<li>The output is printed beneath  </li>
+<li>You can add a comment using a hash &quot;# some simple maths&quot;  </li>
+<li>And if we run the cell again, nothing changes - the notebook ignores anything after a hash.  </li>
+</ul>
+<p>There are lots of keyboard shortcuts. The one I always use is shift and enter to run the cell. Click on the cell, press shift and enter at the same time, and it will run. </p>
+<ul>
+<li>You can bring up the other shortcuts in the following way.  </li>
+<li>Click onto the cell and press escape.</li>
+<li>The cell changes to blue. This is command mode - when you type nothing will appear in the cell.</li>
+<li>H to bring up shortcut options. You can add new cells, delete cells using shortcuts - I need to get better at using these myself.</li>
+</ul>
+<p>We have entered code so far. But you can also enter markdown - format for writing plain text.<br>Switch to markdown.  </p>
+<ul>
+<li>Now when you write something and run it, it will appear as plain text: </li>
+<li>You can add headings:</li>
+<li>And you can add bullet points</li>
+<li>You can add links</li>
+<li>And you can use markdown to insert images </li>
+</ul>
+<pre><code class="lang-markdown"># This is a heading
+This is plain text
+
+- item one
+- item two
+
+[This is a link to XKCD](http://xkcd.com)
+
+!\[](http://bit.ly/python_cat)
+</code></pre>
+<p>You cant have markdown and python in same cell.</p>
+<p><em>On whiteboard write basic markdown syntax</em></p>
+<p>fact that you get comments, pictures, and code in one place is very useful.</p>
+<p><em>Task (5 minutes): use your notebook to: a) link to the Imperial webpage; b) calculate 34226/359; c) make a bullet pointed shopping list with heading &quot;shopping list&quot;</em></p>
+<h2 id="variables-and-assignment">Variables and Assignment</h2>
+<ul>
+<li>Variables are names given to values</li>
+<li>In python, the = symbol assigns the value on the right to the name on the left</li>
+<li>Variables contain letters, digits, _</li>
+<li>Variables cannot start with a digit, and variables which start with a _ have a special meaning so at this point we won&#39;t use them.</li>
+<li>Python is case sensitive</li>
+</ul>
+<p><em>Type after me</em></p>
+<pre><code class="lang-python">age = 73
+first_name = &#39;Clarence&#39;
+</code></pre>
+<ul>
+<li>Age is a variable to which we assign the integer value 42.</li>
+<li>First name is a variable to which we assign the string value Clarence.</li>
+<li>Python has a built in function called print that prints its function arguments as text.</li>
+</ul>
+<pre><code class="lang-python">print(first_name, &#39;is&#39;, age, &#39;years old&#39;)
+</code></pre>
+<ul>
+<li>This is the function name <code>print</code></li>
+<li>These are the function arguments which will be printed</li>
+</ul>
+<p><em>On whiteboard write function_name(arguments)</em></p>
+<ul>
+<li>First name and age are variables, so we don&#39;t need to put quotes around them. &#39;is&#39; and &#39;years old&#39; are strings and will be printed as they appear - we know this because they have quotes around them.</li>
+<li>Run the cell with shift and enter</li>
+<li>The output is printed beneath</li>
+</ul>
+<pre><code class="lang-python">print(last_name)
+</code></pre>
+<ul>
+<li>We get an error message. the first of many! These can be useful, it tells us the variable last_name has not been defined yet.</li>
+<li>We can add </li>
+</ul>
+<pre><code class="lang-python">last_name = &#39;Barlow&#39;
+</code></pre>
+<ul>
+<li>And now there is no error message.</li>
+<li>I can use tab completion. Instead of writing <code>last_name</code> I can write <code>l</code> then press tab and it will auto-complete.</li>
+<li>Notice that I have assigned the variable in this cell. And used the variable in another cell. That&#39;s fine: the variables are saved for use in the whole of this notebook.    </li>
+<li>However, you need to be careful because it is the order of code execution that matters  - not the order that the code is written in. And this can cause problems - in fact, when I talk to programmers, I&#39;d say this is there number one complaint about Jupyter Notebooks. For example</li>
+</ul>
+<pre><code class="lang-python">print(middle_name)
+</code></pre>
+<pre><code class="lang-python">middle_name = Dorothy
+</code></pre>
+<ul>
+<li>If I run the top then the bottom I get an error</li>
+<li><p>If I run the top again, the error has gone. The first time I asked to print the variable <code>middle_name</code> it had not been assigned a value, it had not been created, so I got an error. I then assigned a value, this was stored, so when I run the cell again it works. This can cause confusion because I&#39;ve not changed the code, but the output has changed. We do need to be careful. If you get confused as to the value of different variables. I suggest to click <code>restart and run all</code>:  it will run everything from the top, so you can see errors, and fix them.</p>
+</li>
+<li><p>The final thing I will show you in this section is that variables can be used in calculations:</p>
+</li>
+</ul>
+<pre><code class="lang-python">age=42
+future_age=age+3
+print(&#39;Age in three years&#39;,future_age)
+</code></pre>
+<ul>
+<li>Python doesn&#39;t care what variable names you use but you should make them meaningful - this will make it easier for other people, or your future self, to work out how the programme works. </li>
+<li>I can change the variable to sausages and I&#39;ll get the same output. But sausages in this context is meaningless so its an example of a bad variable name.</li>
+</ul>
+<p><em>Do the predicting values task</em></p>
+<h2 id="data-types-and-type-conversion">Data Types and Type Conversion</h2>
+<p>Each value in Python has a specific type.</p>
+<pre><code>integer - (int) - positive or negative whole numbers - 256 -3
+float - (float) - real number - 3.16436 -0.53 
+string - str - alphanumeric text - &quot;hello&quot; &quot;20 pence.&quot;
+List - a list of one or more values [3,4,5] or [&#39;frog&#39;,2,8]
++ boolean, dict, tuple, complex, None, set
+</code></pre><p>These are the ones we will cover today.</p>
+<ul>
+<li>Integers and floats are numeric types - they represent numbers - they can be positive or negative. </li>
+<li>String and List are sequence types - they are ordered sets of elements</li>
+<li>Boolean (true or false) and dictionaries are also very useful but we don&#39;t have time to cover today. I suggest to look them up when you have time to though.</li>
+</ul>
+<pre><code class="lang-python">print(type(52))
+</code></pre>
+<p>I am going to nest two functions together. I am asking the python interpreter to print the type of the value 52. Its an int.</p>
+<pre><code class="lang-python">fitness = &#39;not bad&#39;
+print(type(fitness))
+</code></pre>
+<ul>
+<li>This tells me that the value assigned to the variable fitness is a string.</li>
+<li>Types are important because they determine which operations can be performed on a value.</li>
+<li>For example, I can subtract two integers</li>
+</ul>
+<pre><code class="lang-python">print(5-3)
+</code></pre>
+<ul>
+<li>But I can&#39;t subtract two strings</li>
+</ul>
+<pre><code class="lang-python">print(&#39;hello&#39;-&#39;h&#39;)
+</code></pre>
+<p>Here are the operations you can do with strings. </p>
+<ul>
+<li>You can add two strings together</li>
+<li>You can multiply a string with an integer. The string will repeat 10 times.</li>
+</ul>
+<pre><code class="lang-python">full_name = &quot;Lucy&quot; + &quot;Geoty&quot; ,print(full_name)
+separator= &quot;-&quot;*10, print(seperator)
+</code></pre>
+<p>The order of a string matters. <code>gold</code> does not equal <code>dlog</code>. Because strings are ordered, you can index a string.</p>
+<p><em>Following moving between the board and projector</em></p>
+<ul>
+<li><code>metal=&#39;gold&#39;</code></li>
+<li>each position in the string is given a number</li>
+<li>this number is called an index. </li>
+<li>indexing is from zero!</li>
+<li>If I want to return the first character of a string I write variable name then the index in square brackets. </li>
+</ul>
+<pre><code class="lang-python">print(metal[0])
+</code></pre>
+<ul>
+<li>indexing from 0!!!!</li>
+<li>we can also slice the string. this means take a slice, a piece of it. for example, we can slice gold to get old. to do this we use <code>[start:stop]</code> - <code>start</code> is where we start the slice, <code>stop</code> is the index one after where we want to stop. Easiest is with an example:</li>
+</ul>
+<pre><code class="lang-python">print(metal[1:4])
+</code></pre>
+<ul>
+<li>Stop is at 4, not 3</li>
+</ul>
+<pre><code class="lang-python">print(metal)
+</code></pre>
+<ul>
+<li>The variable metal is unchanged - still gold. The slice makes a copy, it doens&#39;t replace the original.</li>
+<li>indexing, slicing  - we can do this because we are treating the string like a list of letters, and this is something we can do to any list - we&#39;ll see more of it after the break.</li>
+<li>some functions only work with strings: </li>
+</ul>
+<pre><code class="lang-python">print(len(full_name))
+print(len(52))
+</code></pre>
+<p>This gives length of the string, whilst the length of a number gives an error</p>
+<p><em>Question: what do you think will happen when I run this command?</em></p>
+<pre><code class="lang-python">print(1+&#39;2&#39;)
+</code></pre>
+<p>You cant add a string and an int. You can do this - convert a string to an int or an int to a string.</p>
+<pre><code class="lang-python">print(1 + int(&#39;2&#39;)) 
+print(str(1)+&#39;2&#39;)
+</code></pre>
+<p>We are able to mix float and ints</p>
+<pre><code class="lang-print">1 / 2.0
+</code></pre>
+<p><em>Discuss what you think this will print..</em></p>
+<pre><code class="lang-python">first = 1
+second = 5\*first
+first=2
+print(&#39;first is&#39;, first, &#39;and second is&#39;, second)
+</code></pre>
+<p>key point: second does not update automatically when you change the value of first*</p>
+<h2 id="functions-help-and-errors">Functions, help and errors</h2>
+<ul>
+<li>We&#39;re now going to cover a few miscellaneous things before breaking for coffee: functions, help and errors. </li>
+<li>We&#39;ve come across several built-in functions already. Built in because they are built into the core Python language.</li>
+<li><em>write on board</em> <code>len, int, str, float, print</code></li>
+<li>all take an argument, all need parantheses so python knows a function is being called: `function_name(arguments)</li>
+<li>here are a couple more: the last one doesn&#39;t work as you can&#39;t compare a number and a float</li>
+</ul>
+<pre><code class="lang-python">print(max(3,6,7))
+print(min(2,7,8))
+print(max(1,&#39;a&#39;))
+</code></pre>
+<p><code>round</code> rounds to zero decimal places, but there is an optional argument you can use</p>
+<pre><code class="lang-python">round(3.712)
+round(3.712, 1)
+</code></pre>
+<ul>
+<li>but you may ask, how would I know about this optional arguement?</li>
+<li>well you can use <code>help(round)</code> and this gives documentation</li>
+<li>In a Jupyter notebook you can also use <code>help</code></li>
+</ul>
+<pre><code class="lang-python">help(round)
+round?
+</code></pre>
+<ul>
+<li>Lets move onto errors. </li>
+<li>There are two types: runtime errors and syntax errors. </li>
+<li>Runtime errors, also known as exceptions, happen whilst the python code is executing. For example:</li>
+</ul>
+<pre><code class="lang-python">age=65
+print(aege)
+</code></pre>
+<p>This is an exception : specifically the NameError, aege is not defined - if I correct it, it will run.</p>
+<pre><code class="lang-python">name=lucy
+print(name[4])
+</code></pre>
+<p>So here is a runtime error. IndexError - attempted to access a value that doesn&#39;t exist. Remember, indexing from 0!</p>
+<pre><code class="lang-python">print(age
+</code></pre>
+<p>Now this is a syntax error, I haven&#39;t closed the bracket: the program can&#39;t be parsed and won&#39;t even run.</p>
+<h2 id="recap">Recap</h2>
+<p>Let&#39;s quickly recap what we have covered so far:</p>
+<pre><code>- writing and running python code: Jupyter Notebooks, markdown basics
+- variables: variable names, variable assignment, print(), execution order
+- data types: integer, float, string, string operations/indexing/slicing, type conversion: int(), float()
+- functions, help and errors: min(),max(),round(),help(),runtime errors (exceptions), syntax errors, 
+
+ break
+
+ - lists
+ - for loops
+ - conditionals
+
+ lunch
+</code></pre><p>After the break, we return to look at lists.</p>
+<hr>
+<p><strong>coffee break</strong></p>
+<hr>
+<h2 id="lists">Lists</h2>
+<pre><code>Integer - positive or negative whole numbers (int)
+float - real number like 3.16436 or -0.53 (float)
+string - this is a type (str) text in single or double quotes
+List - a list of one or more values [3,4,5] or [&#39;frog&#39;,2,8], [].
+</code></pre><ul>
+<li>We&#39;ve covered the first three.</li>
+<li>We&#39;ve not looked at list: </li>
+<li>A list has square brackets and the elements of the list are separated by commas. </li>
+<li>It can store many values in a single structure.</li>
+<li>It can be an empty list.</li>
+<li>We discussed because a string is an ordered list of letters, you can index and slice. So we can do that for lists too, and we&#39;ll build on that now.</li>
+</ul>
+<pre><code class="lang-python">pressures = [0.3255,0.2462,0.2352] 
+print(&#39;pressures: &#39;, pressures)
+print(&#39;length: &#39;, len(pressure))
+print(&#39;last pressure in list: &#39;, pressures[2])  
+print(&#39;last pressure in list: &#39;, pressures[-1])
+</code></pre>
+<ul>
+<li>You can print lists, get the length of lists, and access the final element it two different ways. <code>-1</code> indexes the final element of a list in python.</li>
+<li>If I want to modify an item in the list I can do</li>
+</ul>
+<pre><code class="lang-python">pressures[0] = 0.001
+print (&#39;pressure is now: &#39;,pressures)
+</code></pre>
+<ul>
+<li>I&#39;ve replaced the first item of the list with 0.001</li>
+<li>I can try and do this for a string</li>
+</ul>
+<pre><code class="lang-python">name=&quot;lucy&quot;
+lucy[0] = b
+</code></pre>
+<ul>
+<li>And I get an error. But I told you that a string is a list of characters: so why can I replace the first item of a list, but not replace the first item of a string?</li>
+<li>Because string characters are immutable. This means they can&#39;t be changed after creation. But lists are mutable, the items of a list can be modified.</li>
+<li>Each Python type has a set of methods which can be used. For example:</li>
+</ul>
+<pre><code class="lang-python">pressures.append(0.252)
+print (&#39;longer pressure list: &#39;, pressures)
+</code></pre>
+<ul>
+<li>Here I&#39;ve used the list method <code>append</code> to append a value onto the end of the list.</li>
+</ul>
+<pre><code class="lang-python">age = 32
+age.append(14)
+</code></pre>
+<p><em>What do you think will happen here?</em></p>
+<p>An error - <code>append</code> is a method for a list. This is an integer, it doens&#39;t have the append method.</p>
+<pre><code class="lang-python">pressures.append([0.1355])
+print (&#39;longest pressure list: &#39;, pressures)
+</code></pre>
+<ul>
+<li>We now have a list within our lists: it is a 2-dimensional list.</li>
+<li>If I want to remove the last item I can use </li>
+</ul>
+<pre><code class="lang-python">del pressures[-1]
+</code></pre>
+<p>Which removes the last item.</p>
+<h2 id="for-loops">For Loops</h2>
+<p>A for loop is used to execute the same command multiple times.</p>
+<pre><code>
+for number in [2,3,5]:
+    print(number)
+
+same as 
+
+print(2)
+print(3)
+print(5)
+</code></pre><ul>
+<li>It&#39;s a bit of a silly example but you can see how this could be useful if you wanted, for example, to do the same piece of analysis on several sets of data.</li>
+<li>You&#39;ve seen for loops in the bash course yesterday, so the concept is the same:<ul>
+<li>all for loops have a sequence [2,3,5]</li>
+<li>a loop variable </li>
+<li>a body</li>
+</ul>
+</li>
+<li>We loop through the sequence. first time, number=2, second time number=3,..</li>
+<li>The syntax is a little different from bash<ul>
+<li>first line ends in colon</li>
+<li>body indented : indentation is important in python</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python">for number in [2,3,5]:
+print(number)
+
+for number in [2,3,5]
+    print (number)
+
+for number in [2,3,5]:
+    print(number)
+</code></pre>
+<ul>
+<li>You can change this loop variable to anything - its a dummy variable. For example:</li>
+</ul>
+<pre><code class="lang-python">for cat in [2,3,5]:
+    print (cat)
+</code></pre>
+<ul>
+<li>This gives the same output. Of course cat is a silly variable name in this instance, should use something meaningful, like number.</li>
+<li>We can add multiple statements to the loop body</li>
+</ul>
+<pre><code class="lang-python">for number in [2,3,4]:
+    squared = number\*2
+    cubed = number\*3
+    print(number, squared, cubed)
+</code></pre>
+<ul>
+<li>But what about if I wanted to loop over a large number of numbers? Use <code>range</code></li>
+</ul>
+<pre><code class="lang-python">for number in range(0,5):
+    print(number)
+</code></pre>
+<ul>
+<li><code>range</code> is not a list, it is an iterable - you can interate over it. It is more efficient to loop over range than a list of integers.</li>
+</ul>
+<pre><code class="lang-python">for number in range(5):
+    print(number)
+</code></pre>
+<p>-By default, if one argument is given to the <code>range</code> function then the first value is set to zero - it will start at 0.</p>
+<p><em>Question: I want to sum the first 10 integers. What is wrong with this code? How can I fix it (there is more than one way)</em></p>
+<pre><code>total = 0
+for number in range(10):
+    total = total + number
+print(total)
+</code></pre><ul>
+<li>It will add 0 to 9, not 1 to 10.</li>
+<li>There are two ways to fix this. <code>range(11)</code> or <code>range(1,11)</code> or <code>number+1</code>.</li>
+</ul>
+<h2 id="conditionals">Conditionals</h2>
+<ul>
+<li>This is the final section!</li>
+<li><code>if</code> statements are used to control whether a block of code is executed</li>
+<li>The structure is similar to a <code>for</code> loop. First line opens with if and ends in colon.</li>
+<li>The body which can contain one or more statements is indented</li>
+<li>Mass is 4.2. If it&#39;s more than 3 it will print &quot;4.2 is large&quot;</li>
+<li>If it&#39;s between 2 and 3 inclusive it will print &quot;4.2 just right&quot;</li>
+</ul>
+<pre><code>mass = 4.2
+
+if mass &gt; 3:
+    print(mass, &#39; is large&#39;)
+
+if mass &lt; 2:
+    print(mass, &#39; is small&#39;)
+
+if 2 &lt;= mass &lt;= 3:  (check this allowed!)
+    print(mass, &#39; is just right&#39;)
+</code></pre><ul>
+<li>We can combine conditionals and a <code>for</code> loop.</li>
+<li>For each mass it will test if the condition is met. If so, it will print.</li>
+<li>We can add an else statement: this executes a block of code when an if condition is not true. <code>else</code> must come after <code>if</code></li>
+<li>We can add an elif to specify additional tests. <code>elif</code> must come after an <code>if</code> and before any <code>else</code> statement.</li>
+</ul>
+<pre><code class="lang-python">masses = [2.4,2.3,7.4,1.4,5.6]
+for m in masses:
+    if m&gt;3.0:
+        print(m, &#39;is large&#39;)
+    elif m &lt; 2.0:
+        print(m, &#39;is small&#39;)
+    else: 
+        print(m, &#39; is just right&#39;)
+</code></pre>
+<ul>
+<li>The order matters. Once a condition is met python will not test any of the following conditions.</li>
+<li>For example, if you were teaching an undergraduate class a mistake like this could be disasttrous for you students</li>
+</ul>
+<pre><code>grade = 95
+
+if grade &gt;= 70:
+    print (&quot;grade is C&quot;)
+elif grade &gt;= 80:
+    print(&quot;grae is B&quot;)
+elif grade &gt;= 90:
+    print(&quot;grade is A&quot;)
+</code></pre><p><em>Question: what is wrong with the code as it is written? Use your Jupyter notebook to investigate. Re-write it so that it works as intented</em></p>
+<p>Correct answer:</p>
+<pre><code>grade=95
+
+if grade &gt;= 90:
+    print(&quot;grade is A&quot;)
+elif grade &gt;= 80:
+    print(&quot;grae is B&quot;)
+elif grade &gt;= 70:
+    print (&quot;grade is C&quot;)
+</code></pre><h2 id="recap">Recap</h2>
+<p>This is what we have covered since coffee:</p>
+<pre><code>- writing and running python code: Jupyter Notebooks, markdown basics
+- variables: variable names, variable assignment, print(), execution order
+- data types: integer, float, string, string operations/indexing/slicing, type conversion: int(), float()
+- functions, help and errors: min(),max(),round(),help(),runtime errors (exceptions), syntax errors
+
+break
+
+ - lists: sequence type, immutable vs mutable, methods, append, del
+ - for loops: dummy variable, loop syntax, index from 0
+ - conditionals: if, elif, else, ordering
+
+lunch
+</code></pre><p>Return tomorrow for Python part 2, where we will be bringing all this together</p>
+<h2 id="outline">Outline</h2>
+<pre><code>- functions: 
+- variable scope: 
+- libraries: 
+- cleaning data with pandas: 
+
+break
+
+- analysing data with numpy:
+- plotting data with matplotlib: 
+- running code as a Python script: 
+- programming good practice:
+</code></pre><h2 id="functions">Functions</h2>
+<ul>
+<li>We can only keep so much in our mind at one time</li>
+<li>Most of us will have had the experience of breaking a complicated problem down into smaller parts - divide and conquer approach.</li>
+<li>Same thing exists in programming: we write functions which are units of code. </li>
+<li>We&#39;ve seen functions already. For example the function <code>max</code> which returns the maximum of a list. <code>max</code> is an in-built python function - it comes installed with python - but we can also write our own functions.</li>
+<li>Dividing things into units also means we avoid repetition - we can re-use and re-combine our units in different ways instead of typing the same thing many times.</li>
+</ul>
+<p><em>hand out an example, with and without functions</em></p>
+<ul>
+<li>Begin the definition of a new function with def</li>
+<li>Followed by the name of the function (same rules as variable names)</li>
+<li>parameters in parentheses</li>
+<li>these could be empty</li>
+<li>there is a colon and indented block of code</li>
+</ul>
+<pre><code class="lang-python">def print_greeting():
+    print(&#39;Hello!&#39;)
+</code></pre>
+<ul>
+<li>I&#39;ve defined the function but I haven&#39;t run it.</li>
+<li>Need to call the function to execute the code it contains</li>
+</ul>
+<pre><code class="lang-python">print_greeting()
+</code></pre>
+<ul>
+<li>Functions are more useful when they can operate on different data.</li>
+<li>Specify parameters when defining a function. These parameters are automatically assigned a value when the function is called. </li>
+</ul>
+<pre><code class="lang-python">def print_greeting(name,appearance):
+    print(&#39;Hello &#39;,name,&#39; you look &#39;,appearance)
+
+print_greeting(&quot;Lucy&quot;,&quot;excellent&quot;)
+</code></pre>
+<ul>
+<li>When I call print_greeting, the parameter <code>name</code> is assigned the value <code>Lucy</code>.</li>
+<li>the order matters</li>
+</ul>
+<pre><code class="lang-python">def print_greeting(name,appearance):
+    print(&#39;Hello &#39;,name,&#39; you look &#39;,appearance)
+
+print_greeting(&quot;excellent&quot;,&quot;Lucy&quot;)
+</code></pre>
+<ul>
+<li>to avoid this you can name the parameters when we call the function, and then you can specify in any order</li>
+</ul>
+<pre><code class="lang-python">def print_greeting(name,appearance):
+    print(&#39;Hello &#39;,name,&#39; you look &#39;,appearance)
+
+print_greeting(appearance=&quot;excellent&quot;,name=&quot;excellent&quot;)
+</code></pre>
+<ul>
+<li>Functions can return a result to their caller using return</li>
+<li>This is a good example of a function you shouldn&#39;t write because numpy has this average function already defined in it&#39;s library. But for pedagogy&#39;s sake...</li>
+</ul>
+<pre><code class="lang-python">def average(values):
+    return sum(values) / len(values)
+
+print (&#39;average of list:&#39;,average([5,2,6]))
+</code></pre>
+<ul>
+<li>We don&#39;t need to put return at the end. We could put a return at the beginning to handle special cases</li>
+</ul>
+<pre><code class="lang-python">def average(values):
+
+    if len(values) == 0:
+        return None
+
+    return sum(values) / len(values)
+
+print (&#39;average of empty list:&#39;, average([]))
+</code></pre>
+<ul>
+<li>In fact, every function returns something. If you don&#39;t explicitly include a return statement, your function will return <code>None</code>. <code>print_greeting()</code> will return <code>None</code>.</li>
+</ul>
+<pre><code class="lang-python">result = print_greeting(&quot;Lucy&quot;,&quot;excited&quot;)
+print(result)
+</code></pre>
+<ul>
+<li>could mention here the difference between an <code>argument</code> and a <code>parameter</code></li>
+</ul>
+<p><em>Task: Find the First</em></p>
+<pre><code>Fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. 
+
+def first_negative(values):
+    for v in ____:
+        if ____:
+            return ____
+</code></pre><ul>
+<li>What does your function do if the list has only positive numbers?</li>
+</ul>
+<h3 id="variable-scope">Variable Scope</h3>
+<ul>
+<li>The scope of a variable is the part of a program that can &#39;see&#39; that variable.</li>
+<li>pressure is a global variable: defined outside the function, can be seen everywhere</li>
+<li>t and temperature are local variables in adjust: defined in the function, not visible in the main program</li>
+</ul>
+<pre><code>pressure = 103.9
+
+def adjust(t):
+    temperature = t * 1.43 / pressure
+</code></pre><pre><code class="lang-python">pressure = 103.9
+
+def adjust(t):
+    temperature = t * 1.43 / pressure
+
+adjust(0.9)
+print(&#39;temperature after call:&#39;, temperature)
+</code></pre>
+<p><em>Question: how can I adapt the code so that I can access the adjusted temperature?</em></p>
+<h3 id="python-libraries">Python Libraries</h3>
+<ul>
+<li>I mentioned at the start of the course that Python is a popular course, so that there are a lot of Python code already written and available online.</li>
+<li>These are collected together into Python packages. These are some of the most popular scientific python packages. So for example, you are doing astrophysics, you can download the astropy package and this will contain lots of functions - pieces of code - useful to your work.</li>
+<li>Related Functions are collected together in a file called a module.</li>
+<li>A module can also contain data values (numerical constants for example).</li>
+<li>Modules correspond to a single file.</li>
+<li>Related Modules are collected together in a package</li>
+<li>Related packages and modules are collected together in a library</li>
+<li>Package and Library are often used interchangeably; in Python a library is not strictly defined.</li>
+<li>python standard library comes with python itself</li>
+<li>additional libraries are available via the python package index (show python package index)</li>
+<li>we use import to add a library or module into a program&#39;s memory</li>
+<li>lets import the math module which is in the Python standard library</li>
+</ul>
+<pre><code class="lang-python">import math
+
+print(math.pi)
+print(math.cos(0))
+</code></pre>
+<ul>
+<li>We can then access the constant <code>pi</code>, we need to put the library name before it.</li>
+<li><p>A good analogy for this is family names. My name is <code>Lucy Whalley</code>  - I, Lucy, belong to the family Whalley. So we could use the dot notation Whalley.Lucy to refer to me using this structure.</p>
+</li>
+<li><p>We can access help</p>
+</li>
+</ul>
+<pre><code class="lang-python">help(math)
+</code></pre>
+<ul>
+<li>We can create an alias for a library module to reduce typing</li>
+</ul>
+<pre><code class="lang-python">import math as m
+
+print(m.cos(0))
+</code></pre>
+<ul>
+<li>To reduce typing further we could import specific items from a library module</li>
+</ul>
+<pre><code class="lang-python">from math import pi
+
+print(pi)
+print(math.cos(0))
+</code></pre>
+<ul>
+<li>Note we don&#39;t have use of the math.cos because we haven&#39;t imported all of the math module, only the pi constant from the math module.</li>
+</ul>
+<p><em>Question: You want to select a random character from a string.</em></p>
+<pre><code>bases = &#39;ATCHAGHRASG&#39;
+
+1. which standard library module could help you?
+2. which function could you select from that module?
+3. try to write a program that uses that function
+</code></pre><h3 id="recap">Recap</h3>
+<ul>
+<li>Ok now we have all the basic building blocks in place </li>
+</ul>
+<pre><code>- functions: function syntax, return statement, parameters and arguments
+- variable scope: local and global variables
+- libraries:  modules, packages, libraries, import statements, aliases
+- cleaning data with pandas: 
+
+break
+
+- analysing data with numpy:
+- plotting data with matplotlib: 
+- running code as a Python script: 
+- programming good practice:
+</code></pre><h3 id="reading-and-cleaning-data-with-pandas">Reading and cleaning data with Pandas</h3>
+<ul>
+<li>We are now going to work with the UV-Vis data until the end of the session.</li>
+<li>It should be downloaded/moved to your desktop</li>
+<li>Start a new notebok with the name &quot;UV-Vis_example&quot;</li>
+<li>Thumbs up when you are done</li>
+<li>First we need to read it in. There are a couple of libraries which could do this for us. We will use the <code>pandas</code> library which is a popular library for data analysis.</li>
+</ul>
+<pre><code class="lang-python">import pandas
+</code></pre>
+<ul>
+<li>Now that we have imported it we can call the <code>read_csv</code> function in the library</li>
+</ul>
+<pre><code class="lang-python">pandas.read_csv(&quot;./desktop/UVVis-01.csv&quot;)
+</code></pre>
+<ul>
+<li>Remember that it is important to put <code>pandas.</code> before read_csv</li>
+<li>The <code>read_csv</code> function has one argument: the name of the file we want to read.</li>
+<li>This data is from a UV-Vis experiment. The rows are the data for each wavelength, and the columns are the individual samples. 
+<strong>sketch on board</strong> </li>
+<li>This is in a pandas dataframe. A pandas dataframe is 2D data structure with columns of potentially different types.
+We are going to analyse the data, but first we need to clear up this dataframe. There are 3 things I want to do:<ul>
+<li>delete repeated wavelength column</li>
+<li>set column headings (pandas has assumed the first row of the data is a column heading)</li>
+<li>transpose the data: swap rows and columns</li>
+</ul>
+</li>
+<li>we can do the first two things with the following command</li>
+</ul>
+<pre><code class="lang-python">pandas.read_csv(&quot;./Desktop/UVVis-01.csv&quot;,usecols=[1,3,5,7,9,11,13,15,17,19],header=None)
+</code></pre>
+<ul>
+<li><p>We&#39;ve passed two additional arguments to pandas: The usecols keyword which specifies the columns to read in and the header keyword which, when we set to False, tells the read_csv function that there is no heading data in the file and that the headers should be set to an integer range.</p>
+</li>
+<li><p>Ugh, the usecols list explicitly typed out is ugly. Is there a nicer way of writing this list?</p>
+</li>
+</ul>
+<pre><code class="lang-python">columns_tokeep = [0]+list(range(1,21,2))
+</code></pre>
+<ul>
+<li><p>I&#39;ve done two things here. Included a step in the range function, and converted from iterable to a list. Then added them together.</p>
+</li>
+<li><p>Our call to pandas.read_csv read our file but didn’t save the data in memory. To do that, we need to assign the array to a variable. Just as we can assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run <code>pandas.read_csv</code> and save the returned data:</p>
+</li>
+</ul>
+<pre><code class="lang-python">data = pandas.read_csv(&quot;./Desktop/UVVis-01.csv&quot;,usecols=columns_tokeep,header=None)
+</code></pre>
+<ul>
+<li>This statement doesn’t produce any output because we’ve assigned the output to the variable data. If we want to check that the data have been loaded, we can print the variable’s value:</li>
+</ul>
+<pre><code class="lang-python">print(data)
+</code></pre>
+<ul>
+<li>We can have a look and inspect this data type </li>
+</ul>
+<pre><code class="lang-python">type(data)
+</code></pre>
+<ul>
+<li>The output tells us that data currently refers to an pandas DataFrame.</li>
+<li>what is a pandas dataframe? It is a 2D data structure. It can hold heterogeneous data (in each column the datatype is the same, but across columns it can be different). It can handle missing values - NaNs nicely. The axes are labelled. The rows are given index labels. And the columns are given column names. </li>
+<li>We can see that it&#39;s in this frame module. We can have a look at the docstring for dataframe, or for the frame module</li>
+</ul>
+<pre><code class="lang-python">pandas.core.frame.DataFrame?
+</code></pre>
+<ul>
+<li><p>Now that the data are in memory, we can manipulate them. </p>
+</li>
+<li><p>We can now use the transpose method to swap the rows and columns of data, and assign this to the variable data.</p>
+</li>
+</ul>
+<pre><code class="lang-python">data = data.transpose()
+print(data)
+</code></pre>
+<ul>
+<li>Now it makes sense to set this first row as our header. To do this we need to know how to access the first row. We do this with the <code>loc</code> (location) command. This selects the row with the label 0.</li>
+</ul>
+<pre><code class="lang-python">new_header = data.loc[0]
+new_header
+</code></pre>
+<ul>
+<li>We then take the dataframe but without the header row. We do this by slicing. We can slice a numpy dataframe. This slices the rows. The empty after colon means slice to the end.</li>
+</ul>
+<pre><code class="lang-python">data = data.loc[1:]
+</code></pre>
+<ul>
+<li>So this is our dataframe without the first row. Now we need to add our new header to this</li>
+</ul>
+<pre><code class="lang-python">data.columns = new_header
+</code></pre>
+<ul>
+<li>Now our data set is nice and clean and ready to analyse.</li>
+<li>The final thing left to do is print our cleaned dataset to a file for analysing later. </li>
+<li>To do this we can use the <code>to_csv</code> DataFrame method. We set the header to True, but the index parameters to False.</li>
+</ul>
+<pre><code class="lang-python">data.to_csv(&#39;./Desktop/UVVis-01-cleaned.csv&#39;, header=True, index=False)
+</code></pre>
+<ul>
+<li>So we&#39;ve now saved a file containing a cleaned version of our UV-Vis data. If we&#39;d finished work for the day we could save it and look at it later. Note that this is much better than deleting columns or rows by hand in an excel or similar. You have a copy of the raw data and a copy of the notebook used to manipulate it, so you can go back and see exactly what you&#39;ve done. You have a record of your steps. </li>
+</ul>
+<h3 id="analysing-data-with-pandas">Analysing data with Pandas</h3>
+<ul>
+<li>Let&#39;s read in the data we saved. Remember columns are wavelengths, rows are individual samples.</li>
+</ul>
+<pre><code class="lang-python">data = pandas.read_csv(&quot;./Desktop/UVVis-01-cleaned.csv&quot;)
+</code></pre>
+<ul>
+<li>So we have seen how to slice the rows. We do that with</li>
+</ul>
+<pre><code class="lang-python">data.loc[3:8]
+</code></pre>
+<ul>
+<li>This selects the third to 8th row <strong>inclusive</strong>. We can also slice rows and columns. We do this with</li>
+</ul>
+<pre><code class="lang-python">data.loc[3:8,&#39;1500.0&#39;:&#39;1492.0&#39;]
+</code></pre>
+<ul>
+<li><p>The rows we slice first, then a comma, then the columns we want to slice. The column headers are strings, that is why they have to be in quotes. </p>
+</li>
+<li><p>This could get annoying so we can use the map method to map them all to floats.</p>
+</li>
+</ul>
+<pre><code class="lang-python">data.columns.map(float)
+data.columns = data.columns.map(float)
+</code></pre>
+<p>In fact, they are all integers so map them to integers</p>
+<pre><code class="lang-python">data.columns.map(int)
+data.columns = data.columns.map(int)
+</code></pre>
+<ul>
+<li>Now we can slice with integers</li>
+</ul>
+<pre><code class="lang-python">data.loc[3:8,1500:1492]
+</code></pre>
+<ul>
+<li><p>They key thing here is that we index or slice the rows first (before the comma), then the columns (after the comma). </p>
+</li>
+<li><p>Task: Crack the code!</p>
+</li>
+<li><p>We can also perform common mathematical operations across all values in a column or row. Perhaps you find out the machine wasn&#39;t calibrated correctly and you need to add 0.007 to all values. This is easy</p>
+</li>
+</ul>
+<pre><code class="lang-python">data = data + 0.007
+data += 0.007
+</code></pre>
+<ul>
+<li>To add 0.0004 to the values of a given row we do </li>
+</ul>
+<pre><code class="lang-python">data.loc[7] = data.loc[7]+0.0004
+data.loc[7] += 0.0004
+</code></pre>
+<ul>
+<li>To add 0.0004 to the values of a given column we do </li>
+</ul>
+<pre><code class="lang-python">data.loc[:,1495] = data.loc[:,1495]+0.0004
+data.loc[:,1495] += 0.0004
+</code></pre>
+<ul>
+<li>Pandas can also do more complex operations like calculating the mean across the rows</li>
+</ul>
+<pre><code class="lang-python">print(data.mean(axis=0))
+</code></pre>
+<p>-data is a dataframe type. Dataframe types have the <code>mean</code> method. Specifying axis=0, the zeroth axis is rows so its saying calculate the mean over the rows. I could do the mean over the columns</p>
+<pre><code class="lang-python">print(data.mean(axis=1))
+</code></pre>
+<ul>
+<li>We can also calculate the maximum and minimum values in the array</li>
+</ul>
+<pre><code class="lang-python">print(numpy.max(data))
+print(numpy.min(data))
+</code></pre>
+<ul>
+<li><p>To see all the dataframe methods we type <code>data.</code> then press tab</p>
+</li>
+<li><p>For this data it is more likely that we&#39;d want to calculate something like the maximum absorption per sample. One way to do this is to create a new temporary array of the data we want </p>
+</li>
+</ul>
+<pre><code class="lang-python">sample_0 = data.loc[0] # this selects the first row (first sample)
+sample_0.max() # maximum of the first sample
+</code></pre>
+<ul>
+<li>If we wanted to calculate the maximum absorption per sample for every sample, not just for the fist sample, we can use</li>
+</ul>
+<pre><code class="lang-python">print(data.max(axis=1))
+</code></pre>
+<ul>
+<li><code>axis=1</code> tells numpy to find the maximum of the axis 1, which is the columns.</li>
+</ul>
+<p>*Question: what command would be use to calculate the minimum absorption at each wavelength?</p>
+<pre><code class="lang-python">print(data.min(axis=0))
+</code></pre>
+<h3 id="visualizing-data-with-matplotlib">Visualizing data with matplotlib</h3>
+<ul>
+<li><p>There is no official python plotting library, but matplotlib is by far the most widely used. It&#39;s great! You can make a range of beautiful plots (show examples and link to online gallery)</p>
+</li>
+<li><p>Let&#39;s import the library</p>
+</li>
+</ul>
+<pre><code class="lang-python">%matplotlib inline # this allows images to appear in the notebook when I use the show() command
+
+import matplotlib.pyplot
+</code></pre>
+<ul>
+<li>It&#39;s now straightforward to plot the average absorption data across all wavelengths</li>
+</ul>
+<pre><code class="lang-python">ave_absorption = data.mean(axis=0)
+ave_absorption  # this contains wavelengths and average absorption
+</code></pre>
+<pre><code class="lang-python">ave_plot = matplotlib.pyplot.plot(ave_absorption)
+matplotlib.pyplot.show()
+</code></pre>
+<ul>
+<li>We can add labels to the axes</li>
+</ul>
+<pre><code class="lang-python">ave_plot = matplotlib.pyplot.plot(ave_absorption)
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;ave. absorption&quot;)
+matplotlib.pyplot.show()
+</code></pre>
+<ul>
+<li>We are interested in analysing a sub-set of the data, from wavelengths 300 to 1000.</li>
+</ul>
+<pre><code class="lang-python">ave_plot = matplotlib.pyplot.plot(ave_absorption.loc[1000:300])
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;ave. absorption&quot;)
+matplotlib.pyplot.show()
+</code></pre>
+<ul>
+<li><p>Note the order - remember these are not indices, but column headings</p>
+</li>
+<li><p>It&#39;s easy to copy this code and adapt to calculate two other statistics.</p>
+</li>
+</ul>
+<pre><code class="lang-python">
+max_absorption = data.max(axis=0)
+min_absorption = data.min(axis=0)
+
+ave_plot = matplotlib.pyplot.plot(max_absorption)
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;max. absorption&quot;)
+matplotlib.pyplot.show()
+</code></pre>
+<pre><code class="lang-python">ave_plot = matplotlib.pyplot.plot(min_absorption)
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;min. absorption&quot;)
+matplotlib.pyplot.show()
+</code></pre>
+<ul>
+<li>If I want to save this plot, I use the <code>savefig</code> method</li>
+</ul>
+<pre><code class="lang-python">ave_plot = matplotlib.pyplot.plot(min_absorption)
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;min. absorption&quot;)
+matplotlib.pyplot.savefig(&quot;./min_absorption_plot.png&quot;)
+</code></pre>
+<h3 id="running-your-code-as-a-python-script">Running your Code as a Python Script</h3>
+<ul>
+<li>If you wanted to share this script with other researchers you may want to export this code cell as a plain text file. </li>
+<li>It can then be run from a terminal rather than opening up Jupyter Notebooks. </li>
+<li><p>This might be useful if you are trying to automate your workflow</p>
+</li>
+<li><p>To convert the code in your Jupyter Notebook cell into a plain text .py file we can Use the Jupyter Magic command %%writefile myfile.py in your code block. first of all we need to include all the code in a single cell. and then we need to add the writefile command</p>
+</li>
+</ul>
+<pre><code class="lang-python">
+%%writefile absorption_plot.py
+
+import numpy
+import pandas
+import matplotlib.pyplot
+
+data = pandas.read_csv(&quot;./desktop/UVVis-01-cleaned.csv&quot;)
+data.columns = data.columns.map(float).map(int)
+
+min_absorption = data.min(axis=0)
+min_plot = matplotlib.pyplot.plot(min_absorption)
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;min. absorption&quot;)
+matplotlib.pyplot.savefig(&quot;./min_absorption_plot.png&quot;)
+</code></pre>
+<ul>
+<li>This will create a file with the name absorption_plots.py</li>
+<li>You can open it up to see it</li>
+<li>We can run it with </li>
+</ul>
+<pre><code class="lang-bash">python3 absorption_plots.py
+</code></pre>
+<ul>
+<li>No news is good news</li>
+<li><p>And the <code>.png</code> file has been created</p>
+</li>
+<li><p>The data files that are read in by the script are currently hard coded - they cannot be changed without changing the code itself.</p>
+</li>
+<li>Instead, we can import the <code>sys</code> library which allows us to provide command line arguments specifying the filenames for our data. </li>
+<li>The first command line argument is accessed with the variable <code>sys.argv[1]</code> , the second command line argument is accessed with the <code>sys.argv[2]</code> argument and so on. </li>
+<li>We can adapt the absorption_plots.py script as follows:</li>
+</ul>
+<pre><code class="lang-python">%%writefile absorption_plot.py
+
+import sys
+import numpy
+import pandas
+import matplotlib.pyplot
+
+data = pandas.read_csv(sys.argv[1])
+data.columns = data.columns.map(float).map(int)
+
+min_absorption = data.min(axis=0)
+min_plot = matplotlib.pyplot.plot(min_absorption)
+matplotlib.pyplot.xlabel(&quot;wavelength&quot;)
+matplotlib.pyplot.ylabel(&quot;min. absorption&quot;)
+matplotlib.pyplot.savefig(&quot;./min_absorption_plot.png&quot;)
+</code></pre>
+<ul>
+<li>In this example <code>sys.argv[1]</code> should correspond to the cleaned data file</li>
+</ul>
+<pre><code class="lang-bash">python3 absorption_plots.py ./Desktop/UVVis-01-cleaned.csv
+</code></pre>
+<ul>
+<li>We&#39;ve done the very basics, but you can do so much with matplotlib (see gallery).</li>
+</ul>
+<h3 id="programming-good-practice">Programming Good Practice</h3>
+<ul>
+<li>We are now nearing the end, in fact - you can put your keyboards down as there is no more typing to do.</li>
+<li>I want to end with three comments on &quot;programming good practice&quot;</li>
+<li>There could be a days worth of material just talking programming good practice and I only have a couple of minutes</li>
+<li>If you want to know more, I&#39;ve included some links on this slide</li>
+<li><p>It&#39;s never too early to start doing this - in fact, I&#39;d recommend doing this right from the off</p>
+</li>
+<li><p>Follow standard Python style as defined in PEP8 (Python Enhancement Proposal):</p>
+<ul>
+<li>focus on readability (code is read much more than it is written)--&gt; consistency</li>
+<li>maximum line length of 79 characters</li>
+<li>whitespace: <code>spam(ham[1], {eggs: 2})</code> vs <code>spam( ham[ 1 ], { eggs: 2} )</code></li>
+<li>use clear, meaningful variable names</li>
+</ul>
+</li>
+<li><p>Use assertions to check for errors</p>
+</li>
+</ul>
+<pre><code class="lang-python">def calc_bulk_density(mass, volume):  
+    assert volume &gt; 0
+    return mass / volume
+</code></pre>
+<ul>
+<li><p>If the assertion is False, the Python interpreter raises an AssertionError runtime exception. </p>
+</li>
+<li><p>Document your code with docstrings</p>
+</li>
+</ul>
+<pre><code class="lang-python">def calc_bulk_density(mass, volume): 
+    &quot;Return dry bulk density = powder mass / powder volume.&quot;
+    assert volume &gt; 0
+    return mass / volume
+</code></pre>
+<h3 id="recap">Recap</h3>
+<pre><code>- writing and running python code: Jupyter Notebooks, markdown basics
+- variables: variable names, variable assignment, print(), execution order
+- data types: integer, float, string, string operations/indexing/slicing, type conversion: int(), float()
+- functions, help and errors: min(),max(),round(),help(),runtime errors (exceptions), syntax errors
+- lists: sequence type, immutable vs mutable, list method append, del
+- for loops: dummy variable, loop syntax, index from 0
+- conditionals: if, elif, else, ordering
+- functions: function syntax, return statement, parameters and arguments
+- variable scope: local and global variables
+- libraries: modules, packages, libraries, import statements, aliases
+- cleaning data with pandas: `pandas.read_csv`, DataFrames, `pandas.to_csv`
+- analysing data with numpy: `numpy.loadtxt`, N-dimensional arrays, attributes
+- plotting data with matplotlib: %matplotlib inline, `plot()`, xlabel()`, `ylabel()`, `show()`, `savefig()`
+- running code as a Python script: %%writefile filename.py, `python3 filename.py`, `sys` library for command line arguments
+- programming good practice: Python style, `assert` statements, docstrings
+</code></pre><h3 id="closing-comments">Closing Comments</h3>
+<ul>
+<li><p>Document your code: It may be boring, you may not feel like you have the time - but trust me, your future self will thank you for it. Document why you have written something a certain way.</p>
+</li>
+<li><p>Version control your code: look out for software carpentry sessions at your university. I use git to version control all of my code. That way, If I write something and it breaks the code, I can easily go back to an earlier version of the code - again, some time investment now will save you time in the future.</p>
+</li>
+<li><p>Aim for reproduciblilty: use Jupyter Notebooks as SI to papers. One of the cornerstones of science, but it is still very hard to reproduce scientific results. You&#39;ll see this afternoon how you can use Jupyter notebooks to import and analyse data. This can then be published alongside an academic paper so that people can reproduce your results. I&#39;ve done this, and I know people have used this.</p>
+</li>
+<li><p>Keep going! stay confident. Even though Python is &quot;easy&quot; it can still feel pretty hard sometimes. And sometimes it can feel like you are the only one who finds it difficult - it can get demoralising. All I can say is stick with it, it does get easier, also the people around you probably aren&#39;t finding it as easy as you imagine.</p>
+</li>
+</ul>
+<p>What I&#39;ve covered this morning follows the one online. So if you want to recap, go to this link, I&#39;ve followed it almost teaching.</p>
+<h2 id="feedback-time-">Feedback time!</h2>
+</aside></script></section></div>
+    </div>
+
+    <script src="./lib/js/head.min.js"></script>
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

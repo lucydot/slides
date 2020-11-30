@@ -129,6 +129,7 @@ analysis code: [github.com/WMD-group/hot-carrier-cooling](https://github.com/WMD
 5. lists  
 6. for loops  
 7. if statements      
+8. functions
              
 
 
@@ -263,6 +264,7 @@ third = "1.1"
 5. **lists**  
 6. **for loops**  
 7. **if statements**  
+8. **functions**
 
 </small>
 <!--s-->
@@ -347,55 +349,6 @@ elif grade >= 90:
 ```
 <!--s-->
 
-### Summary
-
-<small>
-
-1. **running python code:** Jupyter Notebooks, markdown basics  
-2. **variables:** variable names, variable assignment, `print()`, execution order   
-3. **data types:** integer, float, string, list, `len()`, string operations/indexing/slicing, type conversion: `int()`, `str()`, `float()` 
-4. **functions, help and errors:** `min()`, `max()`, `round()`, `help()`, runtime errors (exceptions), syntax errors  
-5. **lists:** sequence type, immutable vs mutable, list method append, del  
-6. **for loops:** dummy variable, loop syntax, index from 0  
-7. **if statements:** if, elif, else, ordering  
-
-These slides available at: [lucydot.github.io/slides](https://lucydot.github.io/slides)  
-Workshop materials are available at: [lucydot.github.io/python_novice](https://lucydot.github.io/python_novice)  
- 
-Back tomorrow at 9am for Part Two.
-
-</small>
-
-<!--s-->
-
-
-## Welcome
-
-### Programming with Python, Day Two
-
-</br>
-
-Lucy Whalley  / l.whalley@northumbria.ac.uk 
-[lucydot.github.io/slides](https://lucydot.github.io/slides)
-[lucydot.github.io/python_novice](https://lucydot.github.io/python_novice)
-
-
-<!--s-->
-
-### Today's outline
-
-
-1. functions
-2. variable scope  
-3. libraries 
-4. cleaning data with pandas 
-5. analysing data with numpy
-6. plotting data with matplotlib 
-7. running code as a Python script
-8. programming good practice     
-
-
-<!--s-->
 
 ### Functions
 
@@ -430,6 +383,69 @@ def first_negative(values):
 ```
 <!--s-->
 
+
+### Summary
+
+<small>
+
+1. **running python code:** Jupyter Notebooks, markdown basics  
+2. **variables:** variable names, variable assignment, `print()`, execution order   
+3. **data types:** integer, float, string, list, `len()`, string operations/indexing/slicing, type conversion: `int()`, `str()`, `float()` 
+4. **functions, help and errors:** `min()`, `max()`, `round()`, `help()`, runtime errors (exceptions), syntax errors  
+5. **lists:** sequence type, immutable vs mutable, list method append, del  
+6. **for loops:** dummy variable, loop syntax, index from 0  
+7. **if statements:** if, elif, else, ordering  
+8. **functions** function syntax, return statement, parameters and arguments
+
+These slides available at: [lucydot.github.io/slides](https://lucydot.github.io/slides)  
+Workshop materials are available at: [lucydot.github.io/python_novice](https://lucydot.github.io/python_novice)  
+ 
+Start at 9.00am for Part Two.
+
+</small>
+
+<!--s-->
+
+
+## Welcome to Python Part Two
+
+<small>
+
+Summary so far - 
+
+1. **running python code:** Jupyter Notebooks, markdown basics  
+2. **variables:** variable names, variable assignment, `print()`, execution order   
+3. **data types:** integer, float, string, list, `len()`, string operations/indexing/slicing, type conversion: `int()`, `str()`, `float()` 
+4. **functions, help and errors:** `min()`, `max()`, `round()`, `help()`, runtime errors (exceptions), syntax errors  
+5. **lists:** sequence type, immutable vs mutable, list method append, del  
+6. **for loops:** dummy variable, loop syntax, index from 0  
+7. **if statements:** if, elif, else, ordering  
+8. **functions** function syntax, return statement, parameters and arguments
+
+These slides available at: [lucydot.github.io/slides](https://lucydot.github.io/slides)  
+Workshop materials are available at: [lucydot.github.io/python_novice](https://lucydot.github.io/python_novice)  
+ 
+Start at 9.30am.
+
+</small>
+
+
+<!--s-->
+
+### Today's outline
+
+
+1. variable scope  
+2. Python libraries 
+3. reading and cleaning data with pandas 
+4. analysing data with pandas
+5. plotting data with matplotlib 
+6. running code as a Python script
+7. programming good practice     
+
+
+<!--s-->
+
 ### Variable Scope
 
 ```
@@ -439,6 +455,7 @@ def adjust(temperature):
     new_temperature = temperature*1.43/pressure
     
 ```
+
 <!--s-->
 ### Python scientific libraries
 
@@ -462,59 +479,44 @@ Feel free to look online (search for "Python standard library") -> Thumbs up whe
 
 <!--s-->
 
+### Pandas dataframe 
+
+<img src="./dataframe.png"  class="plain" width="1000"/>
+
+<!--s-->
+
 ### Today's outline
 
 <small>
 
-1. **functions**: function syntax, return statement, parameters and arguments
-2. **variable scope**: local and global variables
-3. **libraries**: modules, packages, libraries, import statements, aliases
-4. **cleaning data with pandas**:
-5. **analysing data with numpy**:
-6. **plotting data with matplotlib**: 
-7. **running code as a Python script**:
-8. **programming good practice**:
+1. **variable scope**: local and global variables
+2. **libraries**: modules, packages, libraries, import statements, aliases
+3. **reading and cleaning data with pandas**: `pandas.read_csv`, DataFrames, `pandas.to_csv`,`loc`,slicing rows
+4. **analysing data with numpy**:
+5. **plotting data with matplotlib**: 
+6. **running code as a Python script**:
+7. **programming good practice**:
 
 </small>
 
 <!--s-->
 
-### Indexing arrays
-<img src="./python-zero-index.png"  class="plain" width="1000"/>
-
-<!--s-->
 
 <div align="LEFT">
 
 ### Task (2 min)
 
-Crack the code -> Thumbs up when you are ready to share your answer.
+Crack the code using the dataframe `df` -> Thumbs up when you are ready to share your answer.
+
+<img src="./alphabet.png"  class="plain" width="1000"/>
 
 ```
-letters = np.array([[r,y,c,t],
-					[u,o,x,e],
-					[d,p,i,n]])
-
-letters[0,2] letters[2,0] letters[0,3] - 
-letters[0,0] letters[1,3] letters[3,3] letters[0,1]
+df.loc[3,0:1] df.loc[0,4] df.loc[3,4] df.loc[0,4] df.loc[0,3]
+df.loc[3,3] df.loc[4,2:3]
 ```
 
-
 <!--s-->
 
-## Operations across axes
-
-<img src="./python-operations-across-axes.png"  class="plain" width="1000"/>
-
-
-<!--s-->
-
-### Putting it all together
-
-[bit.ly/plot_example](http://bit.ly/plot_example)
-
-
-<!--s-->
 
 ### Programming good practice
 
@@ -566,14 +568,13 @@ def calc_bulk_density(mass,volume):
 
 <small>
 
-1. **functions**: function syntax, return statement, parameters and arguments
-2. **variable scope**: local and global variables
-3. **libraries**: modules, packages, libraries, import statements, aliases
-4. **cleaning data with pandas**: `pandas.read_csv`, DataFrames, `pandas.to_csv`
-5. **analysing data with numpy**: `numpy.loadtxt`, N-dimensional arrays, attributes
-6. **plotting data with matplotlib**: `%matplotlib inline`, `plot()`, `xlabel()`, `ylabel()`, `show()`, `savefig()`
-7. **running code as a Python script**: `%%writefile filename.py`, `python3 filename.py`
-8. **programming good practice**: Python style, `assert` statements, docstring
+1. **variable scope**: local and global variables
+2. **libraries**: modules, packages, libraries, import statements, aliases
+3. **cleaning data with pandas**: `pandas.read_csv`, DataFrames, `pandas.to_csv`
+4. **analysing data with numpy**: `numpy.loadtxt`, N-dimensional arrays, attributes
+5. **plotting data with matplotlib**: `%matplotlib inline`, `plot()`, `xlabel()`, `ylabel()`, `show()`, `savefig()`
+6. **running code as a Python script**: `%%writefile filename.py`, `python3 filename.py`
+7. **programming good practice**: Python style, `assert` statements, docstring
 
 </small>
 
