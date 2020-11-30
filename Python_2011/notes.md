@@ -3,20 +3,22 @@
 ## To remember
 
 - think about internet
-- Change Keyboard!
+- Change Keyboard! or use headphone/microphone
 - check with Cai - questions, monitoring, note taking..have an instructor to instructor chat.
 - ASK FOR FEEDBACK at end
-
+- check Binder running ok
 
 ## Setup
 
 - Teams for the call
-- ? for quiz questions
-- etherpad for notes
-- website for class notes (not needed during)
-- presentation (not needed during)
+- etherpad for notes, questions, links
+- directpoll for polling: https://www.directpoll.com/c?XDVhEt2FQnm1qDVqy6t8Hp1pNW2T1N#opt0 is the admin page (have it ready)
+- forms for post-workshop quiz
+- jitsi for break out
+- online notebook for people have problems running locally: 
 
 - so student will have: Me on Teams, their notebook webpage on as standard. Then the etherpad for notes, and the quiz webpage for the quiz.
+
 
 ## Intro & Outline
 
@@ -94,14 +96,14 @@ This is the landing page, which you should all see on your computers.
 
 - Arrange your screen so you can see my screen and your Jupyter Notebook at the same time
 - At some points during the training you will also need to access:
-	- etherpad:
-	- quiz:
-	- course website:
-	- this presentation:
+	- etherpad: add your name to the etherpad (at the top and in the doc)
+
 
 If you've got a question or comment raise your hand. Cai will be monitoring the chat. Cai, if there are several people and we need to pause then let me know.
-Use the emojis to give me feedback!
+Use the emojis to give me feedback! especially thumbs up
 Stay on mute unless your speaking. Let me know if I've forgotten to unmute etc.
+
+- set students up with jitsi (even numbers create a jitsi, and give this link to the odd number before them)
 
 ## Writing and running Python code (ctd)
 

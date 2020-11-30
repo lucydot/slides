@@ -69,17 +69,6 @@ analysis code: [github.com/WMD-group/hot-carrier-cooling](https://github.com/WMD
 
 <!--s-->
 
-### Why Programming? Reproducibility
-
-<img src="./effmass.png"  class="plain" width="600"/>  
-
-<small>
-research paper: [Impact of nonparabolic electronic band structure on the optical and transport properties of photovoltaic materials](https://doi.org/10.1103/PhysRevB.99.085207)   
-software paper: [effmass: An effective mass package](https://joss.theoj.org/papers/10.21105/joss.00797)
-</small>
-
-<!--s-->
-
 ### Why Programming? Repeatability
 
 <img src="./bplotone.png"  class="plain" width="800"/>
@@ -120,7 +109,7 @@ software paper: [effmass: An effective mass package](https://joss.theoj.org/pape
 
 <!--s-->
 
-### Why Python? Everything else...
+### Why Python? 
 
 - readable  
 - free to use
@@ -161,9 +150,10 @@ software paper: [effmass: An effective mass package](https://joss.theoj.org/pape
 
 #### Setup (Thumbs up when complete)
 
-- Open your Jupyter Notebook
-- Arrange your screen so you can see my screen (via Teams) and your Jupyter Notebook at the same time
 - Add your name to the etherpad [https://etherpad.wikimedia.org/p/cdt-renu](https://etherpad.wikimedia.org/p/cdt-renu)
+- Open your Jupyter Notebook (open your terminal / git bash --> `jupyter notebook`)
+- Arrange your screen so you can see my screen (via Teams) and your Jupyter Notebook at the same time
+
 
 <!--s-->
 
@@ -173,7 +163,7 @@ software paper: [effmass: An effective mass package](https://joss.theoj.org/pape
 
 Use your Jupyter notebook to...
 
-* link to the CDT-ReNU webpage
+* link to your favourite webpage
 * calculate 3624357/325
 * make a bullet pointed ToDo list with heading "ToDo list"
 
@@ -314,7 +304,7 @@ I want to sum the integers from 1 to 10. What is wrong with this code? How can I
 
 ```
 total = 0
-for number in range(10):
+for number in range(10)
 	total = total + number
 print(total)
 ```
@@ -342,7 +332,7 @@ if 2 <= mass <= 3:
 
 ### Pairs Task (3 min)
 
-What is wrong with the code? Fix the code so that it works as intented -> Thumbs up when you are ready to share your answer.
+What is wrong with the code? Fix the code so that it works as intended -> Thumbs up when you are ready to share your answer.
 
 
 ```
@@ -445,9 +435,8 @@ def first_negative(values):
 ```
 pressure = 103.9
 
-def adjust(t):
-    temperature = t*1.43/pressure
-    return temperature
+def adjust(temperature):
+    new_temperature = temperature*1.43/pressure
     
 ```
 <!--s-->
@@ -463,7 +452,7 @@ def adjust(t):
 
 ### Pairs Task (15 min)
 
-You want to select a random character from a string. ` "base = ATCHAGHRASG" `
+You want to select a random character from a string. `base = "ATCHAGHRASG" `
 
 1. which standard library module could help you?
 2. which function could you select from that module? 
