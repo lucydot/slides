@@ -582,7 +582,6 @@ You could....
 
 </small>
 
-
 <!--s-->
 
 ### Summary
