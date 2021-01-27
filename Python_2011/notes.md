@@ -11,11 +11,11 @@
 ## Setup
 
 - Teams for the call
-- etherpad for notes, questions, links
+- etherpad for notes, questions, links: https://etherpad.wikimedia.org/p/cdt-renu
 - directpoll for polling: https://www.directpoll.com/c?XDVhEt2FQnm1qDVqy6t8Hp1pNW2T1N#opt0 is the admin page (have it ready)
-- forms for post-workshop quiz
+- microsoft forms for post-workshop quiz: 
 - jitsi for break out
-- online notebook for people have problems running locally: 
+- online notebook for people have problems running locally: https://mybinder.org/v2/gh/lucydot/empty_binder.git/HEAD
 
 - so student will have: Me on Teams, their notebook webpage on as standard. Then the etherpad for notes, and the quiz webpage for the quiz.
 
@@ -982,7 +982,7 @@ new_header = data.loc[0]
 new_header
 ~~~
 
-- We then take the dataframe but without the header row. We do this by slicing. We can slice a numpy dataframe. This slices the rows. The empty after colon means slice to the end.
+- We then take the dataframe but without the header row. We do this by slicing. We can slice a  dataframe. This slices the rows. The empty after colon means slice to the end.
 
 ~~~python
 data = data.loc[1:]
@@ -1083,14 +1083,6 @@ print(data.mean(axis=0))
 print(data.mean(axis=1))
 ~~~
 
-
-- We can also calculate the maximum and minimum values in the array
-
-~~~python
-print(numpy.max(data))
-print(numpy.min(data))
-~~~
-
 - To see all the dataframe methods we type `data.` then press tab
 
 - For this data it is more likely that we'd want to calculate something like the maximum absorption per sample. One way to do this is to create a new temporary array of the data we want 
@@ -1106,7 +1098,7 @@ sample_0.max() # maximum of the first sample
 print(data.max(axis=1))
 ~~~
 
-- `axis=1` tells numpy to find the maximum of the axis 1, which is the columns.
+- `axis=1` tells pandas to find the maximum of the axis 1, which is the columns.
 
 *Question: what command would be use to calculate the minimum absorption at each wavelength?
 
@@ -1200,18 +1192,18 @@ matplotlib.pyplot.savefig("./min_absorption_plot.png")
 
 %%writefile absorption_plot.py
 
-import numpy
+
 import pandas
-import matplotlib.pyplot
+import matplotlib.pyplot as plt
 
 data = pandas.read_csv("./desktop/UVVis-01-cleaned.csv")
 data.columns = data.columns.map(float).map(int)
 
 min_absorption = data.min(axis=0)
 min_plot = matplotlib.pyplot.plot(min_absorption)
-matplotlib.pyplot.xlabel("wavelength")
-matplotlib.pyplot.ylabel("min. absorption")
-matplotlib.pyplot.savefig("./min_absorption_plot.png")
+plt.xlabel("wavelength")
+plt.ylabel("min. absorption")
+plt.savefig("./min_absorption_plot.png")
 
 
 ~~~
@@ -1236,18 +1228,17 @@ python3 absorption_plots.py
 %%writefile absorption_plot.py
 
 import sys
-import numpy
 import pandas
-import matplotlib.pyplot
+import matplotlib.pyplot as plt
 
 data = pandas.read_csv(sys.argv[1])
 data.columns = data.columns.map(float).map(int)
 
 min_absorption = data.min(axis=0)
-min_plot = matplotlib.pyplot.plot(min_absorption)
-matplotlib.pyplot.xlabel("wavelength")
-matplotlib.pyplot.ylabel("min. absorption")
-matplotlib.pyplot.savefig("./min_absorption_plot.png")
+plt.plot(min_absorption)
+plt.xlabel("wavelength")
+plt.ylabel("min. absorption")
+plt.savefig("./min_absorption_plot.png")
 
 
 ~~~
@@ -1323,6 +1314,8 @@ def calc_bulk_density(mass, volume):
 - Aim for reproduciblilty: use Jupyter Notebooks as SI to papers. One of the cornerstones of science, but it is still very hard to reproduce scientific results. You'll see this afternoon how you can use Jupyter notebooks to import and analyse data. This can then be published alongside an academic paper so that people can reproduce your results. I've done this, and I know people have used this.
 
 - Keep going! stay confident. Even though Python is "easy" it can still feel pretty hard sometimes. And sometimes it can feel like you are the only one who finds it difficult - it can get demoralising. All I can say is stick with it, it does get easier, also the people around you probably aren't finding it as easy as you imagine.
+
+- Contact your RSE team!
 
 
 What I've covered this morning follows the one online. So if you want to recap, go to this link, I've followed it almost teaching.
