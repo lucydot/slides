@@ -9,6 +9,8 @@ You can re-use any of its content as long as the following attribution is includ
 
 ### Slide List
 
+Please also see my [talks page](https://lucydot.github.io/talks/) for a list of slides.
+
 <details>
   <summary>CDT-ReNU Programming with Python, November 2020</summary>
 
